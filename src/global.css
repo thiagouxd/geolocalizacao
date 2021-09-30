@@ -1,0 +1,18 @@
+:root {
+  --color-black: #000;
+  --color-neutral-100: hsl(0, 0%, 100%);
+  --color-neutral-200: hsl(0, 0%, 97%);
+  --color-neutral-300: hsl(0, 0%, 70%);
+  --color-neutral-400: hsl(0, 0%, 50%);
+  --color-neutral-500: hsl(0, 0%, 30%);
+  --color-neutral-600: hsl(0, 0%, 20%);
+  --color-neutral-700: hsl(0, 0%, 10%);
+}
+
+body {
+  margin: 0;
+  font-family: "Helvetica Neue",
+    sans-serif;
+  background-color: var(--color-neutral-200);
+  box-sizing: border-box;
+}
