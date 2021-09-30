@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Accordion from "./Accordion";
 import CopyrightText from "./CopyrightText";
 import PaymentMethods from "./PaymentMethods";
 import SocialMedias from "./SocialMedias";
@@ -6,6 +7,8 @@ import SocialMedias from "./SocialMedias";
 const Footer = () => {
   return (
     <Container>
+      <Divider />
+      <Accordion />
       <SocialMedias />
       <PaymentMethods />
       <Divider />

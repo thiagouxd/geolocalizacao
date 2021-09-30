@@ -1,6 +1,8 @@
 const Accordion = () => {
   return (
-    <></>
+    <>
+      Espaço para o accordion
+    </>
   )
 }
 

@@ -1,7 +1,7 @@
 import styled from "styled-components"
-import { ReactComponent as NikeLogo } from "../images/logo_nike.svg"
-import { ReactComponent as BagIcon } from "../images/icon_sacola.svg"
-import { ReactComponent as MenuHamburgerIcon } from "../images/icon_hamburger.svg"
+import { ReactComponent as NikeLogo } from "../../images/logo_nike.svg"
+import { ReactComponent as BagIcon } from "../../images/icon_sacola.svg"
+import { ReactComponent as MenuHamburgerIcon } from "../../images/icon_hamburger.svg"
 
 const Header = () => {
   return (
