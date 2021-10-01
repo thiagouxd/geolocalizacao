@@ -46,6 +46,9 @@ const InputContainer = styled.div`
   max-width: 464px;
   overflow: hidden;
   position: relative;
+  &:focus-within {
+    border-color: var(--color-neutral-600);
+  }
   svg {
     position: absolute;
     left: 16px;

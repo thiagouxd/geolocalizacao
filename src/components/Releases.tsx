@@ -7,34 +7,48 @@ import { biggerThanDesktop } from "../utils/mediaQueries"
 const Releases = () => {
   return (
     <Container>
-      <Button>
-        <ChevronLeft />
-      </Button>
-      <InfoContainer>
-        <SneakersLogo />
-        <Text>
-          Fique por dentro dos lançamentos <a href="https://nike.com">SNKRS</a>
-        </Text>
-      </InfoContainer>
-      <Button>
-        <ChevronRight />
-      </Button>
+      <Content>
+        <Button>
+          <ChevronLeft />
+        </Button>
+        <InfoContainer>
+          <SneakersLogo />
+          <Text>
+            Fique por dentro dos lançamentos <a href="https://nike.com">SNKRS</a>
+          </Text>
+        </InfoContainer>
+        <Button>
+          <ChevronRight />
+        </Button>
+      </Content>
     </Container>
   )
 }
 
 const Container = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 784px;
-  margin: 0 auto;
+  width: 100%;  
   padding: 8px 16px;
   box-sizing: border-box;
+  position: sticky;
+  top: 66px;
+  background-color: var(--color-neutral-200);
+  z-index: 1;
+  ${biggerThanDesktop} {
+    padding: 8px 40px;
+  }
   * {
     box-sizing: border-box;
   }
+  `
+
+const Content = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;  
+  max-width: 784px;
+  margin: 0 auto;
+  box-sizing: border-box;
 `
 
 const textColor = "var(--color-neutral-700)"
