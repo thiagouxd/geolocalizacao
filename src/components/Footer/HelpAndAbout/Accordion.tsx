@@ -1,42 +1,45 @@
 import Collapsible from 'react-collapsible';
 import styled from 'styled-components';
+import { ReactComponent as PlusIcon } from "../../../images/icon_plus.svg"
+import { ReactComponent as MinusIcon } from "../../../images/icon_minus.svg"
 
-interface List {
+type ItemAccordion = {
+  list: Links[];
+  title: string
+}
+
+type Links = {
   name: string;
   link: string;
 }
 
 interface Props {
-  helpLinks: List[]
-  aboutLinks: List[]
+  helpLinks: ItemAccordion;
+  aboutLinks: ItemAccordion
 }
 
 const Accordion = ({ helpLinks, aboutLinks }: Props) => {
+  const items = [helpLinks, aboutLinks]
+
   return (
     <Container>
-      <Collapsible trigger="Ajuda">
-        <LinkList>
-          {helpLinks.length && helpLinks.map((item, index) => (
-            <li key={index}>
-              <Link href={item.link}>
-                {item.name}
-              </Link>
-            </li>
-          ))}
-        </LinkList>
-      </Collapsible>
-
-      <Collapsible trigger="Sobre a nike">
-        <LinkList>
-          {aboutLinks.map((item, index) => (
-            <li key={index}>
-              <Link href={item.link}>
-                {item.name}
-              </Link>
-            </li>
-          ))}
-        </LinkList>
-      </Collapsible>
+      {items.map((item, index) => (
+        <Collapsible key={`item${index}`} trigger={item.title}>
+          <LinkList>
+            <Icons>
+              <PlusIcon className="closed-icon" />
+              <MinusIcon className="open-icon" />
+            </Icons>
+            {item.list.map((link, index) => (
+              <li key={`link${index}`}>
+                <Link href={link.link}>
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </LinkList>
+        </Collapsible>
+      ))}
     </Container>
   )
 }
@@ -44,6 +47,26 @@ const Accordion = ({ helpLinks, aboutLinks }: Props) => {
 const border = "1px solid var(--color-neutral-200)"
 
 const Container = styled.div`
+  .Collapsible {
+    position: relative;
+    .is-closed ~ .Collapsible__contentOuter {
+      .open-icon {
+        display: none
+      }
+      .closed-icon {
+        display: block
+      }
+    }
+    .is-open ~ .Collapsible__contentOuter {
+      .open-icon {
+        display: block
+      }
+      .closed-icon {
+        display: none
+      }
+    }
+  }
+  
   .Collapsible__trigger {
     border-top: ${border};
     width: 100%;
@@ -71,6 +94,14 @@ const LinkList = styled.ul`
   li {
     margin-bottom: 8px;
   }
+`
+
+const Icons = styled.div`
+  display: flex;
+  position: absolute;
+  right: 0;
+  top: 16px;
+  pointer-events: none;
 `
 
 export default Accordion
