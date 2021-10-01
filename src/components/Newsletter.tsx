@@ -35,7 +35,7 @@ const Paragraph = styled.p`
   font-weight: var(--font-weight-regular);
   font-size: 16px;
   text-align: center;
-  margin-top: 16px;
+  margin-top: 8px;
   margin-bottom: 0;
   line-height: 24px;
 `
