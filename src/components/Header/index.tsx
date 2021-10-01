@@ -2,44 +2,69 @@ import styled from "styled-components"
 import { ReactComponent as NikeLogo } from "../../images/logo_nike.svg"
 import { ReactComponent as BagIcon } from "../../images/icon_sacola.svg"
 import { ReactComponent as MenuHamburgerIcon } from "../../images/icon_hamburger.svg"
+import { biggerThanDesktop } from "../../utils/mediaQueries"
+import Filters from "./Filters"
+import Search from "./Search"
 
 const Header = () => {
   return (
     <Container>
       <Logo />
 
+      <PrimaryContainer>
+        <Filters />
+      </PrimaryContainer>
+
       <SecondaryContainer>
+        <Search />
         <HeaderButton>
           <BagIcon />
         </HeaderButton>
 
-        <HeaderButton>
+        <HeaderButton className="hamburger-button">
           <MenuHamburgerIcon />
         </HeaderButton>
 
       </SecondaryContainer>
-    </Container>
+    </Container >
   )
 }
 
 const Container = styled.header`
-  display:flex;
+  display: flex;
   height: 66px;
   padding: 0 16px;
   background-color: var(--color-neutral-100);
   position: sticky;
   z-index: 1;
   top: 0;
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: space-between;
+  ${biggerThanDesktop} {
+    padding: 0 40px;
+    justify-content: space-between;
+  }
+`
+
+const PrimaryContainer = styled.nav`
+  display: none;
+  ${biggerThanDesktop} {
+    display: flex;
+  }
 `
 
 const SecondaryContainer = styled.div`
   display: flex;
-  justify-content: flex-end;
-  width: 100%;
+  ${biggerThanDesktop} {
+    .hamburger-button {
+      display: none;
+    }
+  }
 `
 
 const Logo = styled(NikeLogo)`
-  margin: auto;
+  margin: auto 0;
   width: 64px;
 `
 

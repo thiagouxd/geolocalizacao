@@ -1,5 +1,7 @@
 import styled from "styled-components"
 import { ReactComponent as SearchIcon } from "../images/icon_lupa.svg"
+import { biggerThanDesktop } from "../utils/mediaQueries"
+import Button from "./Button"
 
 const Search = () => {
   return (
@@ -10,6 +12,7 @@ const Search = () => {
           <SearchIcon />
           <Input type="search" placeholder="Busque por endereço ou CEP" />
         </InputContainer>
+        <Button>Buscar</Button>
       </Form>
     </Container>
   )
@@ -64,6 +67,17 @@ const Form = styled.form`
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
+  button {
+    display: none;
+  }
+  ${biggerThanDesktop} {
+    flex-direction: row;
+    justify-content: center;
+    button {
+      display: flex;
+      margin-left: 24px;
+    }
+  }
 `
 
 export default Search
