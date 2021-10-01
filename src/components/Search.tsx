@@ -2,6 +2,7 @@ import styled from "styled-components"
 import { ReactComponent as SearchIcon } from "../images/icon_lupa.svg"
 import { biggerThanDesktop } from "../utils/mediaQueries"
 import Button from "./Button"
+import StoreList from "./StoreList"
 
 const Search = () => {
   return (
@@ -14,6 +15,8 @@ const Search = () => {
         </InputContainer>
         <Button>Buscar</Button>
       </Form>
+
+      <StoreList />
     </Container>
   )
 }
@@ -21,6 +24,9 @@ const Search = () => {
 const Container = styled.div`
   background-color: var(--color-neutral-100);
   padding: 32px 16px;
+  ${biggerThanDesktop} {
+    padding: 32px 40px;
+  }
 `
 
 const Title = styled.h2`
@@ -50,6 +56,7 @@ const InputContainer = styled.div`
 `
 
 const Input = styled.input`
+  font-family: "Helvetica Neue";
   width: 100%;
   border: 0;
   height: 48px;

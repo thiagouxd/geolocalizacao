@@ -34,6 +34,7 @@ const InputContainer = styled.div`
 `
 
 const Input = styled.input`
+  font-family: "Helvetica Neue";
   width: 100%;
   height: 100%;
   border: 0;
