@@ -8,12 +8,6 @@
   --color-neutral-500: #737373;
   --color-neutral-600: #4D4D4D;
   --color-neutral-700: #1a1a1a;
-
-  /* Media Queries */
-  --screen-mini: 480px;
-  --screen-small: 720px;
-  --screen-medium: 1200px;
-  --screen-large: 1366px;
 }
 
 body {

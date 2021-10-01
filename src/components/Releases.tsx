@@ -1,17 +1,23 @@
 import styled from "styled-components"
 import { ReactComponent as SneakersLogo } from "../images/logo_nike_snkrs.svg"
+import { ReactComponent as ChevronLeft } from "../images/icon_seta_esquerda.svg"
+import { ReactComponent as ChevronRight } from "../images/icon_seta_direita.svg"
 
 const Releases = () => {
   return (
     <Container>
-      <button>-</button>
+      <Button>
+        <ChevronLeft />
+      </Button>
       <InfoContainer>
         <SneakersLogo />
         <Text>
           Fique por dentro dos lançamentos <a href="https://nike.com">SNKRS</a>
         </Text>
       </InfoContainer>
-      <button>+</button>
+      <Button>
+        <ChevronRight />
+      </Button>
     </Container>
   )
 }
@@ -47,6 +53,17 @@ const InfoContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+`
+
+const Button = styled.button`
+  border: 0;
+  width: 24px;
+  height: 24px;
+  background-color: var(--color-neutral-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
 `
 
 export default Releases
