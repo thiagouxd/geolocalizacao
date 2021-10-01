@@ -27,6 +27,8 @@ const Container = styled.header`
   height: 66px;
   padding: 0 16px;
   background-color: var(--color-neutral-100);
+  position: sticky;
+  top: 0;
 `
 
 const SecondaryContainer = styled.div`

@@ -1,18 +1,26 @@
 :root {
-  --color-black: #000;
-  --color-neutral-100: hsl(0, 0%, 100%);
-  --color-neutral-200: hsl(0, 0%, 97%);
-  --color-neutral-300: hsl(0, 0%, 70%);
-  --color-neutral-400: hsl(0, 0%, 50%);
-  --color-neutral-500: hsl(0, 0%, 30%);
-  --color-neutral-600: hsl(0, 0%, 20%);
-  --color-neutral-700: hsl(0, 0%, 10%);
+  /* Colors */
+  --color-primary: #000;
+  --color-neutral-100: #ffffff;
+  --color-neutral-200: #f7f7f7;
+  --color-neutral-300: #D6D6D6;
+  --color-neutral-400: #999999;
+  --color-neutral-500: #737373;
+  --color-neutral-600: #4D4D4D;
+  --color-neutral-700: #1a1a1a;
+
+  /* Media Queries */
+  --screen-mini: 480px;
+  --screen-small: 720px;
+  --screen-medium: 1200px;
+  --screen-large: 1366px;
 }
 
 body {
   margin: 0;
-  font-family: "Helvetica Neue",
-    sans-serif;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+    Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
   background-color: var(--color-neutral-200);
   box-sizing: border-box;
 }

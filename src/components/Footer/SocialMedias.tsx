@@ -6,7 +6,7 @@ import styled from "styled-components"
 
 const SocialMedias = () => {
   return (
-    <>
+    <div>
       <Title>
         Redes Sociais
       </Title>
@@ -22,7 +22,7 @@ const SocialMedias = () => {
           <Youtube />
         </a>
       </SocialMediasList>
-    </>
+    </div>
   )
 }
 

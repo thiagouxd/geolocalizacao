@@ -10,7 +10,7 @@ import { ReactComponent as Visa } from "../../images/pgto_Visa.svg"
 
 const PaymentMethods = () => {
   return (
-    <>
+    <div>
       <Title>
         Formas de pagamento
       </Title>
@@ -24,7 +24,7 @@ const PaymentMethods = () => {
         <Mastercard />
         <Visa />
       </Methods>
-    </>
+    </div>
   )
 }
 
