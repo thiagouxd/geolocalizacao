@@ -23,7 +23,7 @@ const CustomButton = styled.button`
   border: 0;
   font-family: "Helvetica Neue";
   font-style: normal;
-  font-weight: 500;
+  font-weight: var(--font-weight-semibold);
   font-size: 16px;
   height: 48px;
 `

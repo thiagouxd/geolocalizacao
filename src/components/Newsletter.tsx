@@ -24,7 +24,7 @@ const Container = styled.div`
 const Title = styled.h2`
   font-size: 18px;
   color: var(--color-neutral-700);
-  font-weight: 500;
+  font-weight: var(--font-weight-semibold);
   text-transform: uppercase;
   text-align: center;
   margin-top: 16px;
@@ -32,7 +32,7 @@ const Title = styled.h2`
   `
 
 const Paragraph = styled.p`
-  font-weight: 400;
+  font-weight: var(--font-weight-regular);
   font-size: 16px;
   text-align: center;
   margin-top: 16px;

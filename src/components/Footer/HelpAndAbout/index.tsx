@@ -1,11 +1,26 @@
 import styled from 'styled-components';
+import { biggerThanDesktop } from '../../../utils/mediaQueries';
 import Accordion from './Accordion';
+import Title from '../Title';
+import LinkList from './LinkList';
 
 const HelpAndAbout = () => {
+  const items = [helpLinks, aboutLinks]
+
   return (
     <>
       <Divider />
-      <Accordion aboutLinks={aboutLinks} helpLinks={helpLinks} />
+
+      {items.map((item, index) => (
+        <ItemContainer>
+          <Title>{item.title}</Title>
+          <LinkList list={item.list} />
+        </ItemContainer>
+      ))}
+
+      <AccordionContainer>
+        <Accordion items={items} />
+      </AccordionContainer>
     </>
   );
 };
@@ -14,6 +29,28 @@ const Divider = styled.hr`
   border: 0;
   border-bottom: 1px solid var(--color-neutral-600);
   margin: 24px 0;
+  ${biggerThanDesktop} {
+    display: none;
+  }
+`
+
+const AccordionContainer = styled.div`
+  ${biggerThanDesktop} {
+    display: none;
+  }
+  `
+
+const ItemContainer = styled.div`
+  display: none;
+  ${biggerThanDesktop} {
+    display: flex;
+    flex-direction: column;
+    width: 224px;
+    ul {
+      padding-left: 0px;
+      margin: 0;
+    }
+  }
 `
 
 export default HelpAndAbout;

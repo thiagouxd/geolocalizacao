@@ -2,42 +2,32 @@ import Collapsible from 'react-collapsible';
 import styled from 'styled-components';
 import { ReactComponent as PlusIcon } from "../../../images/icon_plus.svg"
 import { ReactComponent as MinusIcon } from "../../../images/icon_minus.svg"
-
-type ItemAccordion = {
-  list: Links[];
-  title: string
-}
+import LinkList from './LinkList';
 
 type Links = {
   name: string;
   link: string;
 }
 
-interface Props {
-  helpLinks: ItemAccordion;
-  aboutLinks: ItemAccordion
+type ItemAccordion = {
+  list: Links[];
+  title: string
 }
 
-const Accordion = ({ helpLinks, aboutLinks }: Props) => {
-  const items = [helpLinks, aboutLinks]
+interface Props {
+  items: ItemAccordion[];
+}
 
+const Accordion = ({ items }: Props) => {
   return (
     <Container>
       {items.map((item, index) => (
         <Collapsible key={`item${index}`} trigger={item.title}>
-          <LinkList>
-            <Icons>
-              <PlusIcon className="closed-icon" />
-              <MinusIcon className="open-icon" />
-            </Icons>
-            {item.list.map((link, index) => (
-              <li key={`link${index}`}>
-                <Link href={link.link}>
-                  {link.name}
-                </Link>
-              </li>
-            ))}
-          </LinkList>
+          <Icons>
+            <PlusIcon className="closed-icon" />
+            <MinusIcon className="open-icon" />
+          </Icons>
+          <LinkList list={item.list} />
         </Collapsible>
       ))}
     </Container>
@@ -73,7 +63,7 @@ const Container = styled.div`
     display: flex;
     color: var(--color-neutral-100);
     font-size: 16px;
-    font-weight: 500;
+    font-weight: var(--font-weight-semibold);
     line-height: 150%;
     text-transform: uppercase;
     padding: 16px 0;
@@ -81,20 +71,6 @@ const Container = styled.div`
   }
   border-bottom: ${border};
   margin-bottom: 24px;
-`
-
-const Link = styled.a`
-  color: var(--color-neutral-100);
-  font-size: 12px;
-  text-decoration: none;
-`
-
-const LinkList = styled.ul`
-  list-style: none;
-  padding: 0px 16px 16px 16px;
-  li {
-    margin-bottom: 8px;
-  }
 `
 
 const Icons = styled.div`

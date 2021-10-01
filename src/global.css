@@ -3,18 +3,22 @@
   --color-primary: #000;
   --color-neutral-100: #ffffff;
   --color-neutral-200: #f7f7f7;
-  --color-neutral-300: #D6D6D6;
+  --color-neutral-300: #d6d6d6;
   --color-neutral-400: #999999;
   --color-neutral-500: #737373;
-  --color-neutral-600: #4D4D4D;
+  --color-neutral-600: #4d4d4d;
   --color-neutral-700: #1a1a1a;
+
+  /* Font Weight */
+  --font-weight-semibold: 500;
+  --font-weight-bold: 700;
+  --font-weight-regular: 400;
 }
 
 body {
   margin: 0;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+  font-family: "Helvetica Neue",
     Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-weight: 300;
   background-color: var(--color-neutral-200);
   box-sizing: border-box;
 }

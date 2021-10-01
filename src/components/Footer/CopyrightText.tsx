@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { biggerThanDesktop } from "../../utils/mediaQueries";
 
 const getYear = () => {
   const date = new Date();
@@ -12,7 +13,7 @@ const linksList = [
 const CopyrightText = () => {
 
   return (
-    <>
+    <Container>
       <Links>
         {linksList.map((link, index) => (
           <li key={index}>
@@ -26,7 +27,7 @@ const CopyrightText = () => {
         Ltda - CNPJ: 59.546.515/0016-10 Rua José Semião Rodrigues Agostinho, 1370 - Galpão
         Unidade 17 - Nível 0, 1 e 2 - CEP 06833-300 - Embu das Artes/SP.
       </Text>
-    </>
+    </Container>
   )
 }
 
@@ -52,5 +53,14 @@ const Links = styled.ul`
     color: var(--color-neutral-300)
   }
 `
+
+const Container = styled.div`
+  ${biggerThanDesktop} {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+`
+
+
 
 export default CopyrightText

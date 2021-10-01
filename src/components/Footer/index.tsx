@@ -12,8 +12,10 @@ const Footer = () => {
       <InfosContainer>
         <UtilLinks />
         <HelpAndAbout />
-        <SocialMedias />
-        <PaymentMethods />
+        <SecondaryContainer>
+          <SocialMedias />
+          <PaymentMethods />
+        </SecondaryContainer>
       </InfosContainer>
 
       <Divider />
@@ -28,6 +30,9 @@ export default Footer;
 const Container = styled.footer`
   background-color: var(--color-neutral-700);
   padding: 16px;
+  ${biggerThanDesktop} {
+    padding: 16px 40px;
+  }
 `
 
 const InfosContainer = styled.div`
@@ -35,6 +40,15 @@ const InfosContainer = styled.div`
   flex-direction: column;
   ${biggerThanDesktop} {
     flex-direction: row;
+    justify-content: space-between;
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+`
+
+const SecondaryContainer = styled.div`
+  ${biggerThanDesktop} {
+      width: 224px;
   }
 `
 

@@ -2,6 +2,7 @@ import styled from "styled-components"
 import { ReactComponent as SneakersLogo } from "../images/logo_nike_snkrs.svg"
 import { ReactComponent as ChevronLeft } from "../images/icon_seta_esquerda.svg"
 import { ReactComponent as ChevronRight } from "../images/icon_seta_direita.svg"
+import { biggerThanDesktop } from "../utils/mediaQueries"
 
 const Releases = () => {
   return (
@@ -53,6 +54,9 @@ const InfoContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  ${biggerThanDesktop} {
+    flex-direction: row;
+  }
 `
 
 const Button = styled.button`

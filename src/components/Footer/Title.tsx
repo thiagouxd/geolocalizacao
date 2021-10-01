@@ -13,7 +13,7 @@ const Title = ({ children }: Props) => (
 const FooterTitle = styled.h2`
   color: var(--color-neutral-100);
   font-size: 16px;
-  font-weight: bold;
+  font-weight: var(--font-weight-bold);
   line-height: 150%;
   text-transform: uppercase;
 `

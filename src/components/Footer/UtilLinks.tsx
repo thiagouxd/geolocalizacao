@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { biggerThanDesktop } from "../../utils/mediaQueries"
 
 const UtilLinks = () => {
   return (
@@ -21,6 +22,9 @@ const LinkList = styled.ul`
   list-style: none;
   margin-top: 16px;
   margin-bottom: 0;
+  ${biggerThanDesktop} {
+    width: 224px;
+  }
   li {
     margin-bottom: 16px;
     &:last-child {
@@ -30,7 +34,7 @@ const LinkList = styled.ul`
   a {
     color: var(--color-neutral-100);
     font-size: 16px;
-    font-weight: bold;
+    font-weight: var(--font-weight-bold);
     line-height: 150%;
     text-transform: uppercase;
     text-decoration: none;

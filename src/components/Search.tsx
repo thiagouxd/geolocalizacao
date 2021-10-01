@@ -21,7 +21,7 @@ const Container = styled.div`
 `
 
 const Title = styled.h2`
-  font-weight: 500;
+  font-weight: var(--font-weight-semibold);
   font-size: 32px;
   line-height: 38px;
   text-align: center;
