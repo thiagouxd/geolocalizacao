@@ -73,7 +73,7 @@ const Container = styled.div`
     display: flex;
     color: var(--color-neutral-100);
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 500;
     line-height: 150%;
     text-transform: uppercase;
     padding: 16px 0;
@@ -86,11 +86,12 @@ const Container = styled.div`
 const Link = styled.a`
   color: var(--color-neutral-100);
   font-size: 12px;
-  `
+  text-decoration: none;
+`
 
 const LinkList = styled.ul`
   list-style: none;
-  padding: 8px 16px 16px 16px;
+  padding: 0px 16px 16px 16px;
   li {
     margin-bottom: 8px;
   }

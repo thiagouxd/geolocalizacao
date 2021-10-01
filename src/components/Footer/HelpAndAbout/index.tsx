@@ -1,5 +1,3 @@
-
-// import styled from 'styled-components';
 import styled from 'styled-components';
 import Accordion from './Accordion';
 
@@ -13,7 +11,8 @@ const HelpAndAbout = () => {
 };
 
 const Divider = styled.hr`
-  border-color: var(--color-neutral-600);
+  border: 0;
+  border-bottom: 1px solid var(--color-neutral-600);
   margin: 24px 0;
 `
 

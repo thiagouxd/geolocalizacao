@@ -28,6 +28,7 @@ const Container = styled.header`
   padding: 0 16px;
   background-color: var(--color-neutral-100);
   position: sticky;
+  z-index: 1;
   top: 0;
 `
 
