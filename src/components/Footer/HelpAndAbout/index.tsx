@@ -12,7 +12,7 @@ const HelpAndAbout = () => {
       <Divider />
 
       {items.map((item, index) => (
-        <ItemContainer>
+        <ItemContainer key={index}>
           <Title>{item.title}</Title>
           <LinkList list={item.list} />
         </ItemContainer>

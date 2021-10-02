@@ -2,12 +2,26 @@ import styled from "styled-components"
 import { biggerThanDesktop } from "../../utils/mediaQueries"
 import { ReactComponent as PinIcon } from "../../images/icon_pin_link.svg"
 
-const Card = () => {
+type List = {
+  street: string,
+  bairro: string,
+  number: number,
+  city: string,
+  State: string,
+  Country: string,
+  code: string,
+}
+
+interface Props {
+  infos: List
+}
+
+const Card = ({infos}: Props) => {
   return (
     <CustomCard>
       <Header>
         <PrimaryContainer>
-          <Title>Avenida Paulista</Title>
+          <Title>{infos.street}</Title>
           <Distance>1.0 km</Distance>
         </PrimaryContainer>
         <OpenMapButton>

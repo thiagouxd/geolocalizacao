@@ -11,7 +11,9 @@ const StoreList = () => {
           <option>Aberto 24h</option>
         </Select>
 
-        <Address />
+        {addresses.map((address, index) => (
+          <Address key={index} address={address} />
+        ))}
       </Container>
 
       <Map>map</Map>
@@ -79,3 +81,14 @@ const Map = styled.div`
     display: flex;
   }
 `
+
+// Mock
+const addresses = [{
+  street: "Avenida Paulista",
+  bairro: "Bela Vista",
+  number: 738,
+  city: "São Paulo",
+  State: "SP",
+  Country: "Brasil",
+  code: "01298-712"
+},]

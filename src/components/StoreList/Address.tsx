@@ -1,14 +1,30 @@
 import styled from "styled-components"
 import Card from "./Card"
 
-const Address = () => {
+type Infos = {
+  street: string,
+  bairro: string,
+  number: number,
+  city: string,
+  State: string,
+  Country: string,
+  code: string,
+}
+
+interface Item {
+  address: Infos[]
+}
+
+interface Props {
+  infos: Item[]
+}
+
+const Address = ({ infos }: Props) => {
   return (
     <List>
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      {infos.map((item, index) => (
+        <Card key={index} infos={item} />
+      ))}
     </List>
   )
 }
