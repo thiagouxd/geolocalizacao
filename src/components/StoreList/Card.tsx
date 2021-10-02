@@ -16,7 +16,7 @@ interface Props {
   infos: List
 }
 
-const Card = ({infos}: Props) => {
+const Card = ({ infos }: Props) => {
   return (
     <CustomCard>
       <Header>

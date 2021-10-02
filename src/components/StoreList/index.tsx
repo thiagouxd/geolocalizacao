@@ -12,11 +12,11 @@ const StoreList = () => {
         </Select>
 
         {addresses.map((item, index) => (
-          <Address key={index} address="teste" />
+          <></> // <Address key={index} address={item} />
         ))}
       </Container>
 
-      <Map>map</Map>
+      <Map>Map</Map>
     </Addresses>
   )
 }
@@ -86,9 +86,17 @@ const Map = styled.div`
 const addresses = [{
   street: "Avenida Paulista",
   bairro: "Bela Vista",
-  number: 738,
+  number: "738",
   city: "São Paulo",
   State: "SP",
   Country: "Brasil",
   code: "01298-712"
-},]
+}, {
+  street: "Avenida Paulista",
+  bairro: "Bela Vista",
+  number: "738",
+  city: "São Paulo",
+  State: "SP",
+  Country: "Brasil",
+  code: "01298-712"
+}]
