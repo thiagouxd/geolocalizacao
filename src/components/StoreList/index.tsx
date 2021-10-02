@@ -11,9 +11,7 @@ const StoreList = () => {
           <option>Aberto 24h</option>
         </Select>
 
-        {addresses.map((item, index) => (
-          <></> // <Address key={index} address={item} />
-        ))}
+        <Address addresses={addresses} />
       </Container>
 
       <Map>Map</Map>
