@@ -17,17 +17,17 @@ interface Adressess {
 
 const Address = ({ addresses }: Adressess) => {
   return (
-    <List>
+    <CustomList>
       {addresses.map((item, index) => (
         <Card key={index} infos={item} />
       ))}
-    </List>
+    </CustomList>
   )
 }
 
 export default Address
 
-const List = styled.ul`
+const CustomList = styled.ul`
   margin: 0;
   padding: 0;
   box-sizing: border-box;
