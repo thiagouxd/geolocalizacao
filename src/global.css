@@ -1,3 +1,21 @@
+@font-face {
+  font-family: var(--font-family-default);
+  src: url("./font/HelveticaNeueLT55Roman.ttf") format("ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: var(--font-family-default);
+  src: url("./font/HelveticaNeueLT65Medium.ttf") format("ttf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: var(--font-family-default);
+  src: url("./font/HelveticaNeueLT75Bold.ttf") format("ttf");
+  font-weight: 700;
+}
+
 :root {
   /* Colors */
   --color-primary: #000;
@@ -11,15 +29,20 @@
   --color-success: #006611;
 
   /* Font Weight */
-  --font-weight-semibold: 500;
+  --font-weight-semibold: 600;
   --font-weight-bold: 700;
   --font-weight-regular: 400;
+
+  /* Font Family */
+  --font-family-default: "Open Sans", sans-serif;
 }
 
 body {
   margin: 0;
-  font-family: "Helvetica Neue",
-    Helvetica, Arial, "Lucida Grande", sans-serif;
   background-color: var(--color-neutral-200);
+  font-family: var(--font-family-default);
+}
+
+* {
   box-sizing: border-box;
 }

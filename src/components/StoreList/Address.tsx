@@ -12,19 +12,15 @@ type Infos = {
 }
 
 interface Item {
-  address: Infos[]
+  address: string
 }
 
-interface Props {
-  infos: Item[]
-}
-
-const Address = ({ infos }: Props) => {
+const Address = ({ address }: Item) => {
   return (
     <List>
-      {infos.map((item, index) => (
+      {/* {address.map((item, index) => (
         <Card key={index} infos={item} />
-      ))}
+      ))} */}
     </List>
   )
 }

@@ -59,7 +59,7 @@ const InputContainer = styled.div`
 `
 
 const Input = styled.input`
-  font-family: "Helvetica Neue";
+  font-family: var(--font-family-default);
   width: 100%;
   border: 0;
   height: 48px;

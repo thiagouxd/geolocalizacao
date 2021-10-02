@@ -21,7 +21,7 @@ const CustomButton = styled.button`
   margin: 16px 0px;
   color: var(--color-neutral-100);
   border: 0;
-  font-family: "Helvetica Neue";
+  font-family: var(--font-family-default);
   font-style: normal;
   font-weight: var(--font-weight-semibold);
   font-size: 16px;

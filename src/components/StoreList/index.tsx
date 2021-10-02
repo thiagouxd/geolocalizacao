@@ -11,8 +11,8 @@ const StoreList = () => {
           <option>Aberto 24h</option>
         </Select>
 
-        {addresses.map((address, index) => (
-          <Address key={index} address={address} />
+        {addresses.map((item, index) => (
+          <Address key={index} address="teste" />
         ))}
       </Container>
 
@@ -50,14 +50,14 @@ const Select = styled.select`
   background-repeat: no-repeat;
   background-position-x: 100%;
   background-position-y: 14px;
-  font-family: "Helvetica Neue";
+  font-family: var(--font-family-default);
   min-height: 32px;
   padding-right: 48px;
   font-size: 14px;
   color: var(--color-neutral-700);
   outline: 0;
   ${biggerThanDesktop} {
-    width: 150px;
+    width: 160px;
     text-align: left;
   }
 `
