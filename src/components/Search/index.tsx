@@ -6,10 +6,19 @@ import Button from "../Button"
 import StoreList from "../StoreList"
 import getPlaces from "../../api/getPlaces"
 import addresses from "./stores.json"
+import getNearestStores from "../../utils/getNearestStores"
 
 const Search = () => {
   let positions;
   let addressesInfo;
+
+  const getStores = () => {
+    const clientPosition = {
+      lat: -20.494745,
+      lng: -54.614452
+    }
+    getNearestStores(clientPosition)
+  }
 
   const places = () => {
     // getPlaces()
@@ -36,7 +45,7 @@ const Search = () => {
           <SearchIcon />
           <Input type="search" placeholder="Busque por endereço ou CEP" />
         </InputContainer>
-        <Button onClick={places}>Buscar</Button>
+        <Button onClick={getStores}>Buscar</Button>
       </Form>
 
       {/* <StoreList addresses={addressesInfo} positions={positions} /> */}
