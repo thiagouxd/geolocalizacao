@@ -3,10 +3,10 @@ import Card from "./Card"
 
 type List = {
   street: string,
-  bairro: string,
+  district: string,
   number: string,
   city: string,
-  state:string,
+  state: string,
   country: string,
   code: string,
 }

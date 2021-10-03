@@ -4,10 +4,10 @@ import { ReactComponent as PinIcon } from "../../images/icon_pin_link.svg"
 
 type List = {
   street: string,
-  bairro: string,
+  district: string,
   number: string,
   city: string,
-  state:string,
+  state: string,
   country: string,
   code: string,
 }

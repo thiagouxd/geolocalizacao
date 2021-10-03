@@ -1,0 +1,41 @@
+[
+  {
+    "street": "Avenida Paulista",
+    "district": "Bela Vista",
+    "number": "738",
+    "city": "São Paulo",
+    "state": "SP",
+    "country": "Brasil",
+    "code": "01298-712",
+    "position": {
+      "lat": -20.494745,
+      "lng": -54.614452
+    }
+  },
+  {
+    "street": "Avenida Paulista",
+    "district": "Bela Vista",
+    "number": "738",
+    "city": "São Paulo",
+    "state": "SP",
+    "country": "Brasil",
+    "code": "01298-712",
+    "position": {
+      "lat": -20.498554,
+      "lng": -54.625685
+    }
+  },
+  {
+    "street": "Avenida Paulista",
+    "district": "Bela Vista",
+    "number": "738",
+    "city": "São Paulo",
+    "state": "SP",
+    "country": "Brasil",
+    "code": "01298-712",
+    "position": {
+      "lat": -20.501860,
+      "lng": -54.625374
+    }
+  }
+]

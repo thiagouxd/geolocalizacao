@@ -1,15 +1,31 @@
-import { MouseEvent } from "react"
+import { useState } from "react"
 import styled from "styled-components"
-import { ReactComponent as SearchIcon } from "../images/icon_lupa.svg"
-import { biggerThanDesktop } from "../utils/mediaQueries"
-import Button from "./Button"
-import StoreList from "./StoreList"
-import getPlaces from "../api/getPlaces"
+import { ReactComponent as SearchIcon } from "../../images/icon_lupa.svg"
+import { biggerThanDesktop } from "../../utils/mediaQueries"
+import Button from "../Button"
+import StoreList from "../StoreList"
+import getPlaces from "../../api/getPlaces"
+import addresses from "./stores.json"
 
 const Search = () => {
+  let positions;
+  let addressesInfo;
+
   const places = () => {
-    getPlaces()
-    // console.log(window.nomeTriste)
+    // getPlaces()
+    positions = addresses.map((item) => { return { ...item.position } })
+    addressesInfo = addresses.map((item) => {
+      return (
+        {
+          street: item.street,
+          district: item.district,
+          number: item.number,
+          city: item.city,
+          state: item.state,
+          country: item.country,
+          code: item.code,
+        })
+    })
   }
 
   return (
@@ -23,7 +39,7 @@ const Search = () => {
         <Button onClick={places}>Buscar</Button>
       </Form>
 
-      <StoreList />
+      {/* <StoreList addresses={addressesInfo} positions={positions} /> */}
     </Container>
   )
 }

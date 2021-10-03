@@ -2,9 +2,29 @@ import styled from "styled-components"
 import { biggerThanDesktop } from "../../utils/mediaQueries"
 import Address from "./Address"
 import Map from "../Map"
+import { useState } from "react"
 
+type Positions = {
+  lat: number,
+  lng: number
+}
 
-const StoreList = () => {
+type List = {
+  street: string,
+  district: string,
+  number: string,
+  city: string,
+  state: string,
+  country: string,
+  code: string,
+}
+
+type Props = {
+  addresses: List[],
+  positions: Positions[]
+}
+
+const StoreList = ({ addresses, positions }: Props) => {
   return (
     <Addresses>
       <Container>
@@ -16,7 +36,7 @@ const StoreList = () => {
         <Address addresses={addresses} />
       </Container>
 
-      <Map markers={addressesPosition} />
+      <Map markers={positions} />
     </Addresses>
   )
 }
@@ -70,36 +90,3 @@ const Addresses = styled.div`
     margin: 32px auto 0 auto;
   }
 `
-
-// Mock
-const addresses = [{
-  street: "Avenida Paulista",
-  bairro: "Bela Vista",
-  number: "738",
-  city: "São Paulo",
-  state:"SP",
-  country: "Brasil",
-  code: "01298-712"
-}, {
-  street: "Avenida Paulista",
-  bairro: "Bela Vista",
-  number: "738",
-  city: "São Paulo",
-  state:"SP",
-  country: "Brasil",
-  code: "01298-712"
-}, {
-  street: "Avenida Paulista",
-  bairro: "Bela Vista",
-  number: "738",
-  city: "São Paulo",
-  state:"SP",
-  country: "Brasil",
-  code: "01298-712"
-}]
-
-const addressesPosition = [
-  { lat: -20.501860, lng: -54.625374 },
-  { lat: -20.498554, lng: -54.625685 },
-  { lat: -20.494745, lng: -54.614452 },
-]
