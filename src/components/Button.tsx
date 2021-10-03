@@ -2,11 +2,12 @@ import styled from "styled-components";
 
 type Props = {
   children: string,
+  onClick: any
 };
 
-const Button = ({ children }: Props) => {
+const Button = ({ children, onClick }: Props) => {
   return (
-    <CustomButton>{children}</CustomButton>
+    <CustomButton type="button" onClick={onClick}>{children}</CustomButton>
   )
 }
 
@@ -26,6 +27,7 @@ const CustomButton = styled.button`
   font-weight: var(--font-weight-semibold);
   font-size: 16px;
   height: 48px;
+  cursor: pointer;
 `
 
 export default Button

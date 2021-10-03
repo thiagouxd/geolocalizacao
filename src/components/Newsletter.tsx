@@ -2,13 +2,17 @@ import styled from "styled-components"
 import { ReactComponent as LogoNike } from "../images/logo_nike.svg"
 import Button from "./Button"
 
+const GoToNewsletterPage = () => [
+  window.location.hash = "#"
+]
+
 const Newsletter = () => {
   return (
     <Container>
       <LogoNike />
       <Title>Receba as novidades da nike</Title>
       <Paragraph>Cadastre-se e seja um dos primeiros a saber de todas as novidades e ofertas.</Paragraph>
-      <Button>Cadastre-se</Button>
+      <Button onClick={() => GoToNewsletterPage()}>Cadastre-se</Button>
     </Container>
   )
 }

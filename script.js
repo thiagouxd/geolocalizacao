@@ -1,20 +1,20 @@
-const posicaoDoCliente = { posX: 43, posY: 38 };
+const posicaoDoCliente = { lat: 20.494596, lng: -54.610121 };
 
 const posicoesDasLojas = [
-  { posX: 43, posY: 38 },
-  { posX: 34, posY: 88 },
-  { posX: 100, posY: 100 },
-  { posX: 43, posY: 120 },
-  { posX: 20, posY: 21 },
-  { posX: 10, posY: 5 },
+  { lat: 43, lng: 38 },
+  { lat: 34, lng: 88 },
+  { lat: 100, lng: 100 },
+  { lat: 43, lng: 120 },
+  { lat: 20, lng: 21 },
+  { lat: 10, lng: 5 },
 ];
 
 let posicoesDasLojasComparadasComCliente = [];
 
 const compararLocaisComoLocalDoCliente = () => {
   posicoesDasLojas.forEach((loja) => {
-    const diferencaDistanciaX = loja.posX - posicaoDoCliente.posX;
-    const diferencaDistanciaY = loja.posY - posicaoDoCliente.posY;
+    const diferencaDistanciaX = loja.lat - posicaoDoCliente.lat;
+    const diferencaDistanciaY = loja.lng - posicaoDoCliente.lng;
     const distancia = Math.hypot(diferencaDistanciaX, diferencaDistanciaY);
 
     posicoesDasLojasComparadasComCliente.push({

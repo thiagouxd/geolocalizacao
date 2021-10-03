@@ -1,10 +1,17 @@
+import { MouseEvent } from "react"
 import styled from "styled-components"
 import { ReactComponent as SearchIcon } from "../images/icon_lupa.svg"
 import { biggerThanDesktop } from "../utils/mediaQueries"
 import Button from "./Button"
 import StoreList from "./StoreList"
+import getPlaces from "../api/getPlaces"
 
 const Search = () => {
+  const places = () => {
+    getPlaces()
+    // console.log(window.nomeTriste)
+  }
+
   return (
     <Container>
       <Title>Lojas</Title>
@@ -13,7 +20,7 @@ const Search = () => {
           <SearchIcon />
           <Input type="search" placeholder="Busque por endereço ou CEP" />
         </InputContainer>
-        <Button>Buscar</Button>
+        <Button onClick={places}>Buscar</Button>
       </Form>
 
       <StoreList />

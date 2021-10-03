@@ -1,6 +1,8 @@
 import styled from "styled-components"
 import { biggerThanDesktop } from "../../utils/mediaQueries"
 import Address from "./Address"
+import Map from "../Map"
+
 
 const StoreList = () => {
   return (
@@ -14,7 +16,7 @@ const StoreList = () => {
         <Address addresses={addresses} />
       </Container>
 
-      <Map>Map</Map>
+      <Map markers={addressesPosition} />
     </Addresses>
   )
 }
@@ -28,7 +30,6 @@ const Container = styled.div`
   border-radius: 8px;
   width: 100%;
   background-color: var(--color-neutral-200);
-  max-height: 538px;
   box-sizing: border-box;
   overflow-y: auto;
   ${biggerThanDesktop} {
@@ -63,20 +64,10 @@ const Select = styled.select`
 const Addresses = styled.div`
   display: flex;
   margin-top: 32px;
+  height: 538px;
   ${biggerThanDesktop} {
     max-width: 944px;
     margin: 32px auto 0 auto;
-  }
-`
-
-const Map = styled.div`
-  display: none;
-  height: 538px;
-  background-color: red;
-  width: 100%;
-  margin-left: 24px;
-  ${biggerThanDesktop} {
-    display: flex;
   }
 `
 
@@ -86,15 +77,29 @@ const addresses = [{
   bairro: "Bela Vista",
   number: "738",
   city: "São Paulo",
-  State: "SP",
-  Country: "Brasil",
+  state:"SP",
+  country: "Brasil",
   code: "01298-712"
 }, {
   street: "Avenida Paulista",
   bairro: "Bela Vista",
   number: "738",
   city: "São Paulo",
-  State: "SP",
-  Country: "Brasil",
+  state:"SP",
+  country: "Brasil",
+  code: "01298-712"
+}, {
+  street: "Avenida Paulista",
+  bairro: "Bela Vista",
+  number: "738",
+  city: "São Paulo",
+  state:"SP",
+  country: "Brasil",
   code: "01298-712"
 }]
+
+const addressesPosition = [
+  { lat: -20.501860, lng: -54.625374 },
+  { lat: -20.498554, lng: -54.625685 },
+  { lat: -20.494745, lng: -54.614452 },
+]

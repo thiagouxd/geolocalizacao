@@ -7,8 +7,8 @@ type List = {
   bairro: string,
   number: string,
   city: string,
-  State: string,
-  Country: string,
+  state:string,
+  country: string,
   code: string,
 }
 
