@@ -1,13 +1,9 @@
 import styled from "styled-components";
 
-type Props = {
-  children: string,
-  onClick: any
-};
-
-const Button = ({ children, onClick }: Props) => {
+const Button = (props: any) => {
+  const { children, onClick, type } = props;
   return (
-    <CustomButton type="button" onClick={onClick}>{children}</CustomButton>
+    <CustomButton type={type} onClick={onClick}>{children}</CustomButton>
   )
 }
 

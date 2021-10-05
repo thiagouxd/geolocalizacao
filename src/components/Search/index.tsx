@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { ChangeEvent, useEffect, useState } from "react"
 import styled from "styled-components"
 import { ReactComponent as SearchIcon } from "../../images/icon_lupa.svg"
 import { biggerThanDesktop } from "../../utils/mediaQueries"
@@ -8,25 +8,46 @@ import getPlaces from "../../api/getPlaces"
 import addresses from "./stores.json"
 
 const Search = () => {
+  const [inputAddress, setInputAdress] = useState<string>();
+  const [positionLatClient, setPositionLatClient] = useState<string>()
+  const [positionLngClient, setPositionLngClient] = useState<string>()
+
+
   let positions;
   let addressesInfo;
 
-  const places = () => {
-    // getPlaces()
-    positions = addresses.map((item) => { return { ...item.position } })
-    addressesInfo = addresses.map((item) => {
-      return (
-        {
-          street: item.street,
-          district: item.district,
-          number: item.number,
-          city: item.city,
-          state: item.state,
-          country: item.country,
-          code: item.code,
-        })
-    })
+  async function getClientPosition(event: { preventDefault: () => void }) {
+    event.preventDefault()
+    fetch(`http://localhost:8080/input?value=${inputAddress}`)
+      .then(res => res.json())
+      .then(data => {
+        const location = data.candidates[0].geometry.location;
+        setPositionLatClient(location.lat)
+        setPositionLngClient(location.lng)
+      })
   }
+
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setInputAdress(event.target.value)
+  }
+
+  // const places = () => {
+  //   // getPlaces()
+  //   positions = addresses.map((item) => { return { ...item.position } })
+  //   addressesInfo = addresses.map((item) => {
+  //     return (
+  //       {
+  //         street: item.street,
+  //         district: item.district,
+  //         number: item.number,
+  //         city: item.city,
+  //         state: item.state,
+  //         country: item.country,
+  //         code: item.code,
+  //       })
+  //   })
+  // }
 
   return (
     <Container>
@@ -34,10 +55,14 @@ const Search = () => {
       <Form>
         <InputContainer>
           <SearchIcon />
-          <Input type="search" placeholder="Busque por endereço ou CEP" />
+          <Input type="search"
+            placeholder="Busque por endereço ou CEP"
+            onChange={(event) => handleChange(event)} />
         </InputContainer>
-        <Button onClick={places}>Buscar</Button>
+        <Button onClick={getClientPosition}>Buscar</Button>
       </Form>
+      <span>{positionLatClient}</span>
+      <span>{positionLngClient}</span>
 
       {/* <StoreList addresses={addressesInfo} positions={positions} /> */}
     </Container>

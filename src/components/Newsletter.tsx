@@ -12,7 +12,7 @@ const Newsletter = () => {
       <LogoNike />
       <Title>Receba as novidades da nike</Title>
       <Paragraph>Cadastre-se e seja um dos primeiros a saber de todas as novidades e ofertas.</Paragraph>
-      <Button onClick={() => GoToNewsletterPage()}>Cadastre-se</Button>
+      <Button type="button" onClick={() => GoToNewsletterPage()}>Cadastre-se</Button>
     </Container>
   )
 }
