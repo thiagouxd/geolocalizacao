@@ -6,6 +6,7 @@ import Button from "../Button"
 import StoreList from "../StoreList"
 import getPlaces from "../../api/getPlaces"
 import addresses from "./stores.json"
+import getNearestStores from "../../utils/getNearestStores"
 
 const Search = () => {
   const [inputAddress, setInputAdress] = useState<string>();
@@ -31,23 +32,32 @@ const Search = () => {
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setInputAdress(event.target.value)
   }
+  const getStores = () => {
+    const clientPosition = {
+      lat: -20.494745,
+      lng: -54.614452
+    }
+    getNearestStores(clientPosition)
+  }
 
-  // const places = () => {
-  //   // getPlaces()
-  //   positions = addresses.map((item) => { return { ...item.position } })
-  //   addressesInfo = addresses.map((item) => {
-  //     return (
-  //       {
-  //         street: item.street,
-  //         district: item.district,
-  //         number: item.number,
-  //         city: item.city,
-  //         state: item.state,
-  //         country: item.country,
-  //         code: item.code,
-  //       })
-  //   })
-  // }
+  const places = () => {
+    // getPlaces()
+    positions = addresses.map((item) => { return { ...item.position } })
+    addressesInfo = addresses.map((item) => {
+      return (
+        {
+          street: item.street,
+          district: item.district,
+          number: item.number,
+          city: item.city,
+          state: item.state,
+          country: item.country,
+          code: item.code,
+        })
+    })
+  }
+
+
 
   return (
     <Container>
@@ -60,12 +70,12 @@ const Search = () => {
             onChange={(event) => handleChange(event)} />
         </InputContainer>
         <Button onClick={getClientPosition}>Buscar</Button>
-      </Form>
+      </Form >
       <span>{positionLatClient}</span>
       <span>{positionLngClient}</span>
 
       {/* <StoreList addresses={addressesInfo} positions={positions} /> */}
-    </Container>
+    </Container >
   )
 }
 
