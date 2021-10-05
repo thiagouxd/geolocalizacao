@@ -31,7 +31,8 @@ const Search = () => {
   const places = (event: { preventDefault: () => void }) => {
     event.preventDefault()
     getClientPosition()
-    getNearestStores(clientPosition)
+    clientPosition && getNearestStores(clientPosition)
+
 
     positions = addresses.map((item) => { return { ...item.position } })
     addressesInfo = addresses.map((item) => {

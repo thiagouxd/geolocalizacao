@@ -34,12 +34,12 @@ function Map({ markers }) {
     <MapContainer>
       <GoogleMap
         mapContainerStyle={containerStyle}
-        center={markers[0]}
+        center={markers && markers[0]}
         zoom={13}
         onLoad={onLoad}
         onUnmount={onUnmount}
       >
-        {markers.map((marker, index) => {
+        {markers && markers.map((marker, index) => {
           return (
             <Marker
               key={index}
