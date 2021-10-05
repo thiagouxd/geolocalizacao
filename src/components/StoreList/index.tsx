@@ -4,27 +4,8 @@ import Address from "./Address"
 import Map from "../Map"
 import { useState } from "react"
 
-type Positions = {
-  lat: number,
-  lng: number
-}
-
-type List = {
-  street: string,
-  district: string,
-  number: string,
-  city: string,
-  state: string,
-  country: string,
-  code: string,
-}
-
-type Props = {
-  addresses: List[],
-  positions: Positions[]
-}
-
-const StoreList = ({ addresses, positions }: Props) => {
+const StoreList = (props: any) => {
+  const { addresses, positions } = props
   return (
     <Addresses>
       <Container>
@@ -33,7 +14,7 @@ const StoreList = ({ addresses, positions }: Props) => {
           <option>Aberto 24h</option>
         </Select>
 
-        <Address addresses={addresses} />
+        <Address addresses={addresses && addresses} />
       </Container>
 
       <Map markers={positions} />

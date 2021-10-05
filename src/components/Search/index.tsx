@@ -4,27 +4,22 @@ import { ReactComponent as SearchIcon } from "../../images/icon_lupa.svg"
 import { biggerThanDesktop } from "../../utils/mediaQueries"
 import Button from "../Button"
 import StoreList from "../StoreList"
-import getPlaces from "../../api/getPlaces"
 import addresses from "./stores.json"
 import getNearestStores from "../../utils/getNearestStores"
 
 const Search = () => {
   const [inputAddress, setInputAdress] = useState<string>();
-  const [positionLatClient, setPositionLatClient] = useState<string>()
-  const [positionLngClient, setPositionLngClient] = useState<string>()
+  const [clientPosition, setClientPosition] = useState<string>()
 
 
   let positions;
   let addressesInfo;
 
-  async function getClientPosition(event: { preventDefault: () => void }) {
-    event.preventDefault()
+  async function getClientPosition() {
     fetch(`http://localhost:8080/input?value=${inputAddress}`)
       .then(res => res.json())
       .then(data => {
-        const location = data.candidates[0].geometry.location;
-        setPositionLatClient(location.lat)
-        setPositionLngClient(location.lng)
+        setClientPosition(data.candidates[0].geometry.location)
       })
   }
 
@@ -32,16 +27,12 @@ const Search = () => {
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setInputAdress(event.target.value)
   }
-  const getStores = () => {
-    const clientPosition = {
-      lat: -20.494745,
-      lng: -54.614452
-    }
-    getNearestStores(clientPosition)
-  }
 
-  const places = () => {
-    // getPlaces()
+  const places = (event: { preventDefault: () => void }) => {
+    event.preventDefault()
+    getClientPosition()
+    getNearestStores(clientPosition)
+
     positions = addresses.map((item) => { return { ...item.position } })
     addressesInfo = addresses.map((item) => {
       return (
@@ -57,8 +48,6 @@ const Search = () => {
     })
   }
 
-
-
   return (
     <Container>
       <Title>Lojas</Title>
@@ -69,12 +58,10 @@ const Search = () => {
             placeholder="Busque por endereço ou CEP"
             onChange={(event) => handleChange(event)} />
         </InputContainer>
-        <Button onClick={getClientPosition}>Buscar</Button>
+        <Button onClick={places}>Buscar</Button>
       </Form >
-      <span>{positionLatClient}</span>
-      <span>{positionLngClient}</span>
 
-      {/* <StoreList addresses={addressesInfo} positions={positions} /> */}
+      <StoreList addresses={addressesInfo} positions={positions} />
     </Container >
   )
 }

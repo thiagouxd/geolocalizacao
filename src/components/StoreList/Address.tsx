@@ -1,24 +1,11 @@
 import styled from "styled-components"
 import Card from "./Card"
 
-type List = {
-  street: string,
-  district: string,
-  number: string,
-  city: string,
-  state: string,
-  country: string,
-  code: string,
-}
-
-interface Adressess {
-  addresses: List[]
-}
-
-const Address = ({ addresses }: Adressess) => {
+const Address = (props: any) => {
+  const { addresses } = props
   return (
     <CustomList>
-      {addresses.map((item, index) => (
+      {addresses && addresses.map((item: any, index: number) => (
         <Card key={index} infos={item} />
       ))}
     </CustomList>
