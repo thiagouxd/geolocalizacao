@@ -5,6 +5,18 @@ type Props = {
   setShowModal: any
 }
 
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    backgroundColor: 'red',
+    transform: 'translate(-50%, -50%)',
+  },
+};
+
 const Modal = ({ showModal, setShowModal }: Props) => {
   const handleOpenModal = () => {
     setShowModal(true);
@@ -18,6 +30,7 @@ const Modal = ({ showModal, setShowModal }: Props) => {
     <div>
       <button onClick={handleOpenModal}>Trigger Modal</button>
       <ReactModal
+        style={customStyles}
         isOpen={showModal}
         contentLabel="Minimal Modal Example"
       >
