@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "node-fetch": "^3.0.0",
+    "request": "^2.88.2"
+  },
+  "scripts": {
+    "start": "node --experimental-json-modules server.js"
+  },
+  "type": "module"
+}
