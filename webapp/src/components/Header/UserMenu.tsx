@@ -28,6 +28,9 @@ export default UserMenu
 
 const Container = styled.nav`
   display: none;
+  z-index: 1;
+  position: sticky;
+  top: 0;
   width: 100%;
   justify-content: space-between;
   align-items: center;

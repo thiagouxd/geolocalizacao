@@ -37,7 +37,7 @@ const Search = () => {
         <Button onClick={places}>Buscar</Button>
       </Form >
       {console.log("Stores: ", stores)}
-      {stores && <StoreList stores={stores} />}
+      <StoreList stores={stores} />
     </Container >
   )
 }

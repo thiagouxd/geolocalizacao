@@ -30,7 +30,7 @@ const Container = styled.div`
   padding: 8px 16px;
   box-sizing: border-box;
   position: sticky;
-  top: 66px;
+  top: 122px;
   background-color: var(--color-neutral-200);
   z-index: 1;
   ${biggerThanDesktop} {

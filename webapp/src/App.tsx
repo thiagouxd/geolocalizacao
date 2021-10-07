@@ -4,6 +4,7 @@ import Newsletter from "./components/Newsletter";
 import Search from "./components/Search";
 import Releases from "./components/Releases";
 import UserMenu from "./components/Header/UserMenu";
+import Map from "./components/Map";
 
 function App() {
   return (

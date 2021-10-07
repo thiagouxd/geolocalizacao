@@ -10,7 +10,7 @@ const StoreList = (props: any) => {
     <Addresses>
       <Container>
         <Select>
-          <option>Menor distancia</option>
+          <option>Menor distância</option>
           <option>Aberto 24h</option>
         </Select>
 

@@ -37,7 +37,7 @@ const Container = styled.header`
   background-color: var(--color-neutral-100);
   position: sticky;
   z-index: 1;
-  top: 0;
+  top: 56px;
   width: 100%;
   box-sizing: border-box;
   justify-content: space-between;
