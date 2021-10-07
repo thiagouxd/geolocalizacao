@@ -1,12 +1,14 @@
+import { useState } from "react"
 import styled from "styled-components"
 import Card from "./Card"
 
 const Address = (props: any) => {
-  const { addresses } = props
+  const { addresses, setShowMapModal } = props
+
   return (
     <CustomList>
       {addresses && addresses.map((item: any, index: number) => (
-        <Card key={index} infos={item} />
+        <Card setShowMapModal={setShowMapModal} key={index} infos={item} />
       ))}
     </CustomList>
   )

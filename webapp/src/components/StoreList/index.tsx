@@ -2,9 +2,11 @@ import styled from "styled-components"
 import { biggerThanDesktop } from "../../utils/mediaQueries"
 import Address from "./Address"
 import Map from "../Map"
+import { useState } from "react"
 
 const StoreList = (props: any) => {
   const { stores } = props
+  const [showMapModal, setShowMapModal] = useState<boolean>(false)
 
   return (
     <Addresses>
@@ -14,10 +16,10 @@ const StoreList = (props: any) => {
           <option>Aberto 24h</option>
         </Select>
 
-        <Address addresses={stores} />
+        <Address setShowMapModal={setShowMapModal} addresses={stores} />
       </Container>
 
-      <Map stores={stores} />
+      <Map showModal={showMapModal} setShowModal={setShowMapModal} stores={stores} />
     </Addresses>
   )
 }

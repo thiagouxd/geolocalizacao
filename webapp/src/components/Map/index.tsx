@@ -4,6 +4,7 @@ import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
 import pinMap from "../../images/icon_pin_mapa.svg"
 import { biggerThanDesktop } from '../../utils/mediaQueries';
 import styled from 'styled-components';
+import Modal from './Modal';
 
 const key = "AIzaSyC5t7cK8VjiacG1DxOkl0TO-tWcMbKu9hA"
 
@@ -12,13 +13,19 @@ const containerStyle = {
   height: '100%'
 };
 
-function Map({ stores }) {
+type Props = {
+  stores: any, showModal: boolean, setShowModal: any
+}
+
+function Map({ stores, showModal, setShowModal }: Props) {
+  const [centerPosition, setCenterPosition] = useState<any>()
+
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: key
   })
 
-  const [map, setMap] = React.useState(null)
+  const [, setMap] = React.useState(null)
 
   const onLoad = React.useCallback(function callback(map) {
     const bounds = new window.google.maps.LatLngBounds();
@@ -30,36 +37,38 @@ function Map({ stores }) {
     setMap(null)
   }, [])
 
-  const [centerPosition, setCenterPosition] = useState()
 
   useEffect(() => {
     setCenterPosition({ lat: stores[0].lat, lng: stores[0].lng })
   }, [stores])
 
   return isLoaded ? (
-    <MapContainer>
-      {centerPosition && <GoogleMap
-        mapContainerStyle={containerStyle}
-        center={centerPosition && centerPosition}
-        zoom={10}
-        onLoad={onLoad}
-        onUnmount={onUnmount}
-      >
-        {stores.map((store, index) => {
-          return (
-            <Marker
-              key={index}
-              position={{
-                lat: store.lat,
-                lng: store.lng
-              }}
-              icon={pinMap} />
-          )
-        })}
-        <></>
-      </GoogleMap>
-      }
-    </MapContainer>
+    <>
+      <Modal showModal={showModal} setShowModal={setShowModal} />
+      <MapContainer>
+        {centerPosition && <GoogleMap
+          mapContainerStyle={containerStyle}
+          center={centerPosition && centerPosition}
+          zoom={10}
+          onLoad={onLoad}
+          onUnmount={onUnmount}
+        >
+          {stores.map((store: any, index: number) => {
+            return (
+              <Marker
+                key={index}
+                position={{
+                  lat: store.lat,
+                  lng: store.lng
+                }}
+                icon={pinMap} />
+            )
+          })}
+          <></>
+        </GoogleMap>
+        }
+      </MapContainer>
+    </>
   ) : <></>
 }
 

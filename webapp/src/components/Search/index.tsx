@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useState } from "react"
+import { ChangeEvent, useState } from "react"
 import styled from "styled-components"
 import { ReactComponent as SearchIcon } from "../../images/icon_lupa.svg"
 import { biggerThanDesktop } from "../../utils/mediaQueries"
@@ -6,7 +6,6 @@ import Button from "../Button"
 import StoreList from "../StoreList"
 import nearestStores from "../../utils/nearestStores"
 import getClientPosition from "../../api/getClientsPosition"
-import getStores from "../../api/getstores"
 
 const Search = () => {
   const [inputAddress, setInputAdress] = useState<string>("");

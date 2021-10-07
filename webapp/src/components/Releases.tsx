@@ -36,10 +36,7 @@ const Container = styled.div`
   ${biggerThanDesktop} {
     padding: 8px 40px;
   }
-  * {
-    box-sizing: border-box;
-  }
-  `
+`
 
 const Content = styled.div`
   display: flex;

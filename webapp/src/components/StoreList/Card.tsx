@@ -1,7 +1,6 @@
 import styled from "styled-components"
 import { biggerThanDesktop } from "../../utils/mediaQueries"
 import { ReactComponent as PinIcon } from "../../images/icon_pin_link.svg"
-import { info } from "console"
 
 type List = {
   street: string,
@@ -17,10 +16,11 @@ type List = {
 }
 
 interface Props {
-  infos: List
+  infos: List,
+  setShowMapModal: any
 }
 
-const Card = ({ infos }: Props) => {
+const Card = ({ infos, setShowMapModal }: Props) => {
   return (
     <CustomCard>
       <Header>
@@ -28,7 +28,7 @@ const Card = ({ infos }: Props) => {
           <Title>{infos.street}</Title>
           <Distance>{infos.distance}</Distance>
         </PrimaryContainer>
-        <OpenMapButton>
+        <OpenMapButton onClick={setShowMapModal}>
           <PinIcon /> <span>Ver no mapa</span>
         </OpenMapButton>
       </Header>
