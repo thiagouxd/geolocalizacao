@@ -4,25 +4,13 @@ import { ReactComponent as SearchIcon } from "../../images/icon_lupa.svg"
 import { biggerThanDesktop } from "../../utils/mediaQueries"
 import Button from "../Button"
 import StoreList from "../StoreList"
-import addresses from "./stores.json"
-import getNearestStores from "../../utils/getNearestStores"
+import nearestStores from "../../utils/nearestStores"
+import getClientPosition from "../../api/getClientsPosition"
+import getStores from "../../api/getstores"
 
 const Search = () => {
-  const [inputAddress, setInputAdress] = useState<string>();
-  const [clientPosition, setClientPosition] = useState<string>()
-
-
-  let positions;
-  let addressesInfo;
-
-  async function getClientPosition() {
-    fetch(`http://localhost:8080/input?value=${inputAddress}`)
-      .then(res => res.json())
-      .then(data => {
-        setClientPosition(data.candidates[0].geometry.location)
-      })
-  }
-
+  const [inputAddress, setInputAdress] = useState<string>("");
+  const [stores, setStores] = useState<any>()
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setInputAdress(event.target.value)
@@ -30,24 +18,16 @@ const Search = () => {
 
   const places = (event: { preventDefault: () => void }) => {
     event.preventDefault()
-    getClientPosition()
-    clientPosition && getNearestStores(clientPosition)
-
-
-    positions = addresses.map((item) => { return { ...item.position } })
-    addressesInfo = addresses.map((item) => {
-      return (
-        {
-          street: item.street,
-          district: item.district,
-          number: item.number,
-          city: item.city,
-          state: item.state,
-          country: item.country,
-          code: item.code,
-        })
+    getClientPosition(inputAddress).then(res => {
+      nearestStores(res).then((res: any) => {
+        setStores(res)
+      })
     })
   }
+
+  useEffect(() => {
+    console.log("stores: ", stores)
+  }, [stores])
 
   return (
     <Container>
@@ -62,7 +42,7 @@ const Search = () => {
         <Button onClick={places}>Buscar</Button>
       </Form >
 
-      <StoreList addresses={addressesInfo} positions={positions} />
+      {stores && <StoreList stores={stores} />}
     </Container >
   )
 }

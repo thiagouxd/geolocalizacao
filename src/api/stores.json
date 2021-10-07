@@ -1,0 +1,38 @@
+[
+  {
+    "street": "Avenida Paulista",
+    "number": "1227",
+    "district": "Bela Vista",
+    "city": "São Paulo",
+    "state": "SP",
+    "postalCode": "01311-200",
+    "openingHours": "Segunda a Sábado 10h às 22h | Domingo 11h às 20h",
+    "availability": "Disponível em 4 dias úteis",
+    "lat": -23.563880,
+    "lng": -46.653830
+  },
+  {
+    "street": "R. Pamplona",
+    "number": "410",
+    "district": "Jardim Paulista",
+    "city": "São Paulo",
+    "state": "SP",
+    "postalCode": "01421-200",
+    "openingHours": "Segunda a Sábado 10h às 22h | Domingo 11h às 20h",
+    "availability": "Disponível em 4 dias úteis",
+    "lat": -23.562327,
+    "lng": -46.652531
+  },
+  {
+    "street": "R. Angatuba",
+    "number": "578",
+    "district": "Pacaembu",
+    "city": "São Paulo",
+    "state": "SP",
+    "postalCode": "01124-200",
+    "openingHours": "Segunda a Sábado 10h às 22h | Domingo 11h às 20h",
+    "availability": "Disponível em 4 dias úteis",
+    "lat": -23.551214,
+    "lng": -46.666619
+  }
+]

@@ -12,7 +12,7 @@ const containerStyle = {
   height: '100%'
 };
 
-function Map({ markers }) {
+function Map({ stores }) {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: key
@@ -34,16 +34,19 @@ function Map({ markers }) {
     <MapContainer>
       <GoogleMap
         mapContainerStyle={containerStyle}
-        center={markers && markers[0]}
+        center={stores && { lat: stores[0].lat, lng: stores[0].lng }}
         zoom={13}
         onLoad={onLoad}
         onUnmount={onUnmount}
       >
-        {markers && markers.map((marker, index) => {
+        {stores && stores.map((store, index) => {
           return (
             <Marker
               key={index}
-              position={marker}
+              position={{
+                lat: store.lat,
+                lng: store.lng
+              }}
               icon={pinMap} />
           )
         })}

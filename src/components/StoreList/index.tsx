@@ -2,10 +2,10 @@ import styled from "styled-components"
 import { biggerThanDesktop } from "../../utils/mediaQueries"
 import Address from "./Address"
 import Map from "../Map"
-import { useState } from "react"
 
 const StoreList = (props: any) => {
-  const { addresses, positions } = props
+  const { stores } = props
+
   return (
     <Addresses>
       <Container>
@@ -14,10 +14,10 @@ const StoreList = (props: any) => {
           <option>Aberto 24h</option>
         </Select>
 
-        <Address addresses={addresses && addresses} />
+        <Address addresses={stores} />
       </Container>
 
-      <Map markers={positions} />
+      <Map stores={stores} />
     </Addresses>
   )
 }

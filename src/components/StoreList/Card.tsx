@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import { biggerThanDesktop } from "../../utils/mediaQueries"
 import { ReactComponent as PinIcon } from "../../images/icon_pin_link.svg"
+import { info } from "console"
 
 type List = {
   street: string,
@@ -9,7 +10,10 @@ type List = {
   city: string,
   state: string,
   country: string,
-  code: string,
+  postalCode: string,
+  distance: string,
+  openingHours: string,
+  availability: string
 }
 
 interface Props {
@@ -22,7 +26,7 @@ const Card = ({ infos }: Props) => {
       <Header>
         <PrimaryContainer>
           <Title>{infos.street}</Title>
-          <Distance>1.0 km</Distance>
+          <Distance>{infos.distance}</Distance>
         </PrimaryContainer>
         <OpenMapButton>
           <PinIcon /> <span>Ver no mapa</span>
@@ -31,15 +35,15 @@ const Card = ({ infos }: Props) => {
 
       <Infos>
         <AddressInfo>
-          Avenida Paulista, 1227 - Bela Vista <br />
-          São Paulo - SP, 01311-200
+          {infos.street}, {infos.number} - {infos.district} <br />
+          {infos.city} - {infos.state}, {infos.postalCode}
         </AddressInfo>
         <Text>
           Atendimento:
           <br />
-          Segunda a Sábado 10h às 22h | Domingo 11h às 20h
+          {infos.openingHours}
         </Text>
-        <Status>Disponível em 4 dias úteis</Status>
+        <Status>{infos.availability}</Status>
       </Infos>
     </CustomCard>
   )
