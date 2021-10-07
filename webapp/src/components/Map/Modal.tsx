@@ -1,23 +1,13 @@
-import ReactModal from 'react-modal'
+import styled from "styled-components";
+import { ReactComponent as CloseIcon } from "../../images/icon_close.svg"
 
 type Props = {
   showModal: boolean,
-  setShowModal: any
+  setShowModal: any,
+  children: any
 }
 
-const customStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    backgroundColor: 'red',
-    transform: 'translate(-50%, -50%)',
-  },
-};
-
-const Modal = ({ showModal, setShowModal }: Props) => {
+const Modal = ({ showModal, setShowModal, children }: Props) => {
   const handleOpenModal = () => {
     setShowModal(true);
   }
@@ -26,19 +16,65 @@ const Modal = ({ showModal, setShowModal }: Props) => {
     setShowModal(false);
   }
 
-  return (
-    <div>
-      <button onClick={handleOpenModal}>Trigger Modal</button>
-      <ReactModal
-        style={customStyles}
-        isOpen={showModal}
-        contentLabel="Minimal Modal Example"
-      >
-        <button onClick={handleCloseModal}>Close Modal</button>
-
-      </ReactModal>
-    </div >
-  );
+  return (<>
+    <Overlay className={`${showModal && "show"}`}>
+      <Content>
+        <Header>
+          <h2></h2>
+          <CloseButton onClick={handleCloseModal}>
+            <CloseIcon />
+          </CloseButton>
+        </Header>
+        {children}
+      </Content>
+    </Overlay>
+  </>);
 }
 
 export default Modal
+
+const Overlay = styled.div`
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.25);
+  z-index:999;
+  justify-content: center;
+  align-items: center;
+  &.show {
+    display: flex;
+  }
+`
+
+const Content = styled.div`
+  display: block;
+  position: relative;
+  max-width: 800px;
+  width:calc(100vw - 32px);
+  height: 100%;
+  max-height: calc(100vh - 32px);
+  background-color: var(--color-neutral-100);
+  overflow-y: auto;
+  margin: 0;
+  padding-top: 48px;
+  border-radius: 8px;
+  box-shadow: 0px 12px 10px rgba(0, 0, 0, 0.3);
+`
+
+const CloseButton = styled.button`
+
+`
+
+const Header = styled.div`
+  display: flex;
+  height: 48px;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  justify-content: space-between;
+  width: 100%;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
+`

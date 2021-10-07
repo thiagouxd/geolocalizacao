@@ -4,7 +4,6 @@ import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
 import pinMap from "../../images/icon_pin_mapa.svg"
 import { biggerThanDesktop } from '../../utils/mediaQueries';
 import styled from 'styled-components';
-import Modal from './Modal';
 
 const key = "AIzaSyC5t7cK8VjiacG1DxOkl0TO-tWcMbKu9hA"
 
@@ -14,10 +13,10 @@ const containerStyle = {
 };
 
 type Props = {
-  stores: any, showModal: boolean, setShowModal: any
+  stores: any
 }
 
-function Map({ stores, showModal, setShowModal }: Props) {
+function Map({ stores }: Props) {
   const [centerPosition, setCenterPosition] = useState<any>()
 
   const { isLoaded } = useJsApiLoader({
@@ -43,43 +42,36 @@ function Map({ stores, showModal, setShowModal }: Props) {
   }, [stores])
 
   return isLoaded ? (
-    <>
-      <Modal showModal={showModal} setShowModal={setShowModal} />
-      <MapContainer>
-        {centerPosition && <GoogleMap
-          mapContainerStyle={containerStyle}
-          center={centerPosition && centerPosition}
-          zoom={10}
-          onLoad={onLoad}
-          onUnmount={onUnmount}
-        >
-          {stores.map((store: any, index: number) => {
-            return (
-              <Marker
-                key={index}
-                position={{
-                  lat: store.lat,
-                  lng: store.lng
-                }}
-                icon={pinMap} />
-            )
-          })}
-          <></>
-        </GoogleMap>
-        }
-      </MapContainer>
-    </>
+    <MapContainer>
+      {centerPosition && <GoogleMap
+        mapContainerStyle={containerStyle}
+        center={centerPosition && centerPosition}
+        zoom={10}
+        onLoad={onLoad}
+        onUnmount={onUnmount}
+      >
+        {stores.map((store: any, index: number) => {
+          return (
+            <Marker
+              key={index}
+              position={{
+                lat: store.lat,
+                lng: store.lng
+              }}
+              icon={pinMap} />
+          )
+        })}
+        <></>
+      </GoogleMap>
+      }
+    </MapContainer>
   ) : <></>
 }
 
 export default React.memo(Map)
 
 const MapContainer = styled.div`
-  display: none;
+  display: flex;
   height: 100%;
   width: 100%;
-  margin-left: 24px;
-  ${biggerThanDesktop} {
-    display: flex;
-  }
 `
