@@ -1,5 +1,5 @@
 import pinMap from "../../images/icon_pin_mapa.svg"
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
 
 const containerStyle = {
@@ -10,7 +10,9 @@ const containerStyle = {
 
 const key = "AIzaSyC5t7cK8VjiacG1DxOkl0TO-tWcMbKu9hA"
 
-function Map({ stores }: any) {
+function Map(props: any) {
+  const { stores, center = { lat: stores[0].lat, lng: stores[0].lng } } = props
+
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: key
@@ -19,9 +21,8 @@ function Map({ stores }: any) {
   return isLoaded && stores ? (
     <GoogleMap
       mapContainerStyle={containerStyle}
-      id="marker-example"
       zoom={16}
-      center={{ lat: stores[0].lat, lng: stores[0].lng }}
+      center={center}
     >
       {stores.map((store: any, index: number) => {
         return (

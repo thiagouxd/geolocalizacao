@@ -30,10 +30,11 @@ const Container = styled.div`
   padding: 8px 16px;
   box-sizing: border-box;
   position: sticky;
-  top: 122px;
+  top: 66px;
   background-color: var(--color-neutral-200);
   z-index: 1;
   ${biggerThanDesktop} {
+    top: 122px;
     padding: 8px 40px;
   }
 `

@@ -37,11 +37,12 @@ const Container = styled.header`
   background-color: var(--color-neutral-100);
   position: sticky;
   z-index: 1;
-  top: 56px;
+  top: 0;
   width: 100%;
   box-sizing: border-box;
   justify-content: space-between;
   ${biggerThanDesktop} {
+    top: 56px;
     padding: 0 40px;
     justify-content: space-between;
   }

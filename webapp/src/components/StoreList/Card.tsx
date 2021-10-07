@@ -12,15 +12,24 @@ type List = {
   postalCode: string,
   distance: string,
   openingHours: string,
-  availability: string
+  availability: string,
+  lat: string
+  lng: string
 }
 
 interface Props {
   infos: List,
-  setShowMapModal: any
+  setShowMapModal: any,
+  setCenterMap: any
 }
 
-const Card = ({ infos, setShowMapModal }: Props) => {
+
+const Card = ({ infos, setShowMapModal, setCenterMap }: Props) => {
+  const handleShowMap = () => {
+    setShowMapModal(true);
+    setCenterMap({ lat: infos?.lat, lng: infos?.lng })
+  }
+
   return (
     <CustomCard>
       <Header>
@@ -28,7 +37,7 @@ const Card = ({ infos, setShowMapModal }: Props) => {
           <Title>{infos.street}</Title>
           <Distance>{infos.distance}</Distance>
         </PrimaryContainer>
-        <OpenMapButton onClick={setShowMapModal}>
+        <OpenMapButton onClick={handleShowMap}>
           <PinIcon /> <span>Ver no mapa</span>
         </OpenMapButton>
       </Header>

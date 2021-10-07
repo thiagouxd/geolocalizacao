@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ReactComponent as CloseIcon } from "../../images/icon_close.svg"
+import { ReactComponent as CloseIcon } from "../images/icon_close.svg"
 
 type Props = {
   showModal: boolean,
@@ -8,10 +8,6 @@ type Props = {
 }
 
 const Modal = ({ showModal, setShowModal, children }: Props) => {
-  const handleOpenModal = () => {
-    setShowModal(true);
-  }
-
   const handleCloseModal = () => {
     setShowModal(false);
   }
@@ -65,7 +61,10 @@ const Content = styled.div`
 `
 
 const CloseButton = styled.button`
-
+  background-color: transparent;
+  border: 0;
+  padding: 8px;
+  margin-right: 16px;
 `
 
 const Header = styled.div`
