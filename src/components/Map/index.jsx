@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import React from 'react'
 import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
 import pinMap from "../../images/icon_pin_mapa.svg"
@@ -30,16 +30,22 @@ function Map({ stores }) {
     setMap(null)
   }, [])
 
+  const [centerPosition, setCenterPosition] = useState()
+
+  useEffect(() => {
+    setCenterPosition({ lat: stores[0].lat, lng: stores[0].lng })
+  }, [stores])
+
   return isLoaded ? (
     <MapContainer>
-      <GoogleMap
+      {centerPosition && <GoogleMap
         mapContainerStyle={containerStyle}
-        center={stores && { lat: stores[0].lat, lng: stores[0].lng }}
-        zoom={13}
+        center={centerPosition && centerPosition}
+        zoom={10}
         onLoad={onLoad}
         onUnmount={onUnmount}
       >
-        {stores && stores.map((store, index) => {
+        {stores.map((store, index) => {
           return (
             <Marker
               key={index}
@@ -52,6 +58,7 @@ function Map({ stores }) {
         })}
         <></>
       </GoogleMap>
+      }
     </MapContainer>
   ) : <></>
 }

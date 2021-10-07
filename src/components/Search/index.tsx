@@ -25,10 +25,6 @@ const Search = () => {
     })
   }
 
-  useEffect(() => {
-    console.log("stores: ", stores)
-  }, [stores])
-
   return (
     <Container>
       <Title>Lojas</Title>
@@ -41,7 +37,7 @@ const Search = () => {
         </InputContainer>
         <Button onClick={places}>Buscar</Button>
       </Form >
-
+      {console.log("Stores: ", stores)}
       {stores && <StoreList stores={stores} />}
     </Container >
   )
