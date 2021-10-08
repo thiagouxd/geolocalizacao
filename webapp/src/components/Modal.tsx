@@ -1,3 +1,4 @@
+import { useCallback, useEffect } from "react";
 import styled from "styled-components";
 import { ReactComponent as CloseIcon } from "../images/icon_close.svg"
 
@@ -11,6 +12,20 @@ const Modal = ({ showModal, setShowModal, children }: Props) => {
   const handleCloseModal = () => {
     setShowModal(false);
   }
+
+  const escFunction = useCallback((event) => {
+    if (event.keyCode === 27) {
+      setShowModal(false)
+    }
+  }, [setShowModal]);
+
+  useEffect(() => {
+    document.addEventListener("keydown", escFunction, false);
+
+    return () => {
+      document.removeEventListener("keydown", escFunction, false);
+    };
+  }, [escFunction]);
 
   return (<>
     <Overlay className={`${showModal && "show"}`}>
@@ -64,6 +79,10 @@ const CloseButton = styled.button`
   border: 0;
   padding: 8px;
   margin-right: 16px;
+  cursor: pointer;
+  &:focus,&:hover {
+    opacity: 0.8;
+  }
 `
 
 const Header = styled.div`
