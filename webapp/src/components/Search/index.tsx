@@ -15,11 +15,13 @@ const Search = () => {
     setInputAdress(event.target.value)
   }
 
-  const places = (event: { preventDefault: () => void }) => {
+  const handleDefineStores = (event: { preventDefault: () => void }) => {
     event.preventDefault()
+
+
     getClientPosition(inputAddress).then(res => {
       nearestStores(res).then((res: any) => {
-        setStores(res)
+        res.length ? setStores(res) : alert("Não houve resultado para sua busca")
       })
     })
   }
@@ -34,8 +36,8 @@ const Search = () => {
             placeholder="Busque por endereço ou CEP"
             onChange={(event) => handleChange(event)} />
         </InputContainer>
-        <Button onClick={places}>Buscar</Button>
-      </Form >
+        <Button onClick={handleDefineStores}>Buscar</Button>
+      </Form>
 
       {stores && <StoreList stores={stores} />}
     </Container >
