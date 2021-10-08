@@ -27,6 +27,9 @@ const Link = styled.a`
   color: var(--color-neutral-100);
   font-size: 12px;
   text-decoration: none;
+  &:hover,&:focus {
+    color: var(--color-neutral-300);
+  }
 `
 
 const List = styled.ul`

@@ -24,6 +24,9 @@ const CustomButton = styled.button`
   font-size: 16px;
   height: 48px;
   cursor: pointer;
+  &:hover,&:focus {
+    background-color: var(--color-neutral-700);
+  }
 `
 
 export default Button

@@ -34,10 +34,14 @@ const LinkList = styled.ul`
   a {
     color: var(--color-neutral-100);
     font-size: 16px;
+    display: flex;
     font-weight: var(--font-weight-bold);
-    line-height: 150%;
+    line-height: 24px;
     text-transform: uppercase;
     text-decoration: none;
+    &:hover,&:focus {
+      color: var(--color-neutral-300)
+    }
   }
 `
 

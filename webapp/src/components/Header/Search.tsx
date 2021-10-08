@@ -20,9 +20,13 @@ const InputContainer = styled.div`
   overflow: hidden;
   position: relative;
   margin: auto 0;
+  border: 1px solid transparent;
   background-color: var(--color-neutral-200);
   ${smallerThanDesktop} {
     display: none;
+  }
+  &:focus-within {
+    border-color: var(--color-neutral-400);
   }
   svg {
     position: absolute;

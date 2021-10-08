@@ -1,38 +1,149 @@
 [
   {
-    "street": "Avenida Paulista",
-    "number": "1227",
-    "district": "Bela Vista",
-    "city": "São Paulo",
-    "state": "SP",
-    "postalCode": "01311-200",
+    "street": "Rua Garcia Lorca",
+    "number": "301 Lj 40",
+    "district": "Paulicéia",
     "openingHours": "Segunda a Sábado 10h às 22h | Domingo 11h às 20h",
     "availability": "Disponível em 4 dias úteis",
-    "lat": -23.563880,
-    "lng": -46.653830
+    "city": "São Bernardo do Campo",
+    "state": "SP",
+    "postalCode": "09695-000",
+    "lat": -23.6690761,
+    "lng": -46.5750436
+  },
+
+  {
+    "street": "Praça do Carmo",
+    "number": "13 Quadra 2",
+    "district": "Centro",
+    "openingHours": "Segunda a Sábado 10h às 22h | Domingo 11h às 20h",
+    "availability": "Disponível em 4 dias úteis",
+    "city": "Santo André",
+    "state": "SP",
+    "postalCode": "09010-020",
+    "lat": -23.6570854,
+    "lng": -46.5268527
+  },
+
+  {
+    "street": "R. Oscar Freire",
+    "number": "969",
+    "district": "Cerqueira Cesar",
+    "openingHours": "Segunda a Sábado 10h às 22h | Domingo 11h às 20h",
+    "availability": "Disponível em 4 dias úteis",
+    "city": "São Paulo",
+    "state": "SP",
+    "postalCode": "01426-001",
+    "lat": -23.562813,
+    "lng": -46.6697195
+  },
+
+  {
+    "street": "Av. dos Autonomistas",
+    "number": "1542 Lj AR06",
+    "district": "Vila Yara",
+    "openingHours": "Segunda a Sábado 10h às 22h | Domingo 11h às 20h",
+    "availability": "Disponível em 4 dias úteis",
+    "city": "Osasco",
+    "state": "SP",
+    "postalCode": "06020-010",
+    "lat": -20.4368823,
+    "lng": -54.587293
   },
   {
-    "street": "R. Pamplona",
-    "number": "410",
-    "district": "Jardim Paulista",
-    "city": "São Paulo",
-    "state": "SP",
-    "postalCode": "01421-200",
+    "street": "R. Oscar Freire",
+    "number": "969",
+    "district": "Cerqueira Cesar",
     "openingHours": "Segunda a Sábado 10h às 22h | Domingo 11h às 20h",
     "availability": "Disponível em 4 dias úteis",
-    "lat": -23.562327,
-    "lng": -46.652531
+    "city": "São Paulo",
+    "state": "SP",
+    "postalCode": "01426-001",
+    "lat": -23.562813,
+    "lng": -46.6697195
   },
   {
-    "street": "R. Angatuba",
-    "number": "578",
-    "district": "Pacaembu",
-    "city": "São Paulo",
-    "state": "SP",
-    "postalCode": "01124-200",
+    "street": "Rua Coronel Xavier de Toledo",
+    "number": "23 Ljs 23 a 27 e 42",
+    "district": "Centro",
     "openingHours": "Segunda a Sábado 10h às 22h | Domingo 11h às 20h",
     "availability": "Disponível em 4 dias úteis",
-    "lat": -23.551214,
-    "lng": -46.666619
+    "city": "São Paulo",
+    "state": "SP",
+    "postalCode": "01048-100",
+    "lat": -20.4844849,
+    "lng": -54.6328638
+  },
+  {
+    "street": "Av. Higienópolis",
+    "number": "618 LUC 127 A 129",
+    "district": "Higienópolis",
+    "openingHours": "Segunda a Sábado 10h às 22h | Domingo 11h às 20h",
+    "availability": "Disponível em 4 dias úteis",
+    "city": "São Paulo",
+    "state": "SP",
+    "postalCode": "01238-000",
+    "lat": -23.5422471,
+    "lng": -46.6576357
+  },
+  {
+    "street": "Avenida José Pinheiro Borges",
+    "number": "0 Lj. 457",
+    "district": "Vila Campanela",
+    "openingHours": "Segunda a Sábado 10h às 22h | Domingo 11h às 20h",
+    "availability": "Disponível em 4 dias úteis",
+    "city": "São Paulo",
+    "state": "SP",
+    "postalCode": "08220-900",
+    "lat": -23.5405271,
+    "lng": -46.4711896
+  },
+  {
+    "street": "Rod. Presidente Dutra KM 222",
+    "number": "3, 0 Shopping Só Marcas Outlet",
+    "district": "Porto da Igreja",
+    "openingHours": "Segunda a Sábado 10h às 22h | Domingo 11h às 20h",
+    "availability": "Disponível em 4 dias úteis",
+    "city": "Guarulhos",
+    "state": "SP",
+    "postalCode": "07034-000",
+    "lat": -23.4711096,
+    "lng": -46.5181839
+  },
+  {
+    "street": "Estrada São Bento",
+    "number": "9550 Loja 127, 128 e 129",
+    "district": "Jardim Josely",
+    "openingHours": "Segunda a Sábado 10h às 22h | Domingo 11h às 20h",
+    "availability": "Disponível em 4 dias úteis",
+    "city": "Itaquaquecetuba",
+    "state": "SP",
+    "postalCode": "08590-315",
+    "lat": -20.4755323,
+    "lng": -54.6054596
+  },
+  {
+    "street": "Rodovia Castelo Branco KM 60",
+    "number": "Loja 45/46",
+    "district": "Dona Catarina",
+    "openingHours": "Segunda a Sábado 10h às 22h | Domingo 11h às 20h",
+    "availability": "Disponível em 4 dias úteis",
+    "city": "São Roque",
+    "state": "SP",
+    "postalCode": "18132-000",
+    "lat": -20.4284065,
+    "lng": -54.59931109999999
+  },
+  {
+    "street": "Avenida Andrômeda",
+    "number": "227 SUC 269",
+    "district": "Jd. Sattélite",
+    "openingHours": "Segunda a Sábado 10h às 22h | Domingo 11h às 20h",
+    "availability": "Disponível em 4 dias úteis",
+    "city": "São José dos Campos",
+    "state": "SP",
+    "postalCode": "12230-000",
+    "lat": -23.2174699,
+    "lng": -45.8939895
   }
 ]
