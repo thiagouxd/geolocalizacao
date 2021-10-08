@@ -8,14 +8,14 @@ const comparePlaces = (clientPosition: any) => {
   storesPositionCompareWithClientPosition = []
   clientPosition &&
     stores.forEach(store => {
-      // Hipotenusa
-      // const diferenceLat = store.lat - clientPosition.lat;
-      // const diferenceLng = store.lng - clientPosition.lng;
-      // const distance = Math.hypot(diferenceLat, diferenceLng);
+      const diferenceLat = store.lat - clientPosition.lat;
+      const diferenceLng = store.lng - clientPosition.lng;
+      const distance = Math.hypot(diferenceLat, diferenceLng);
 
       storesPositionCompareWithClientPosition.push({
         ...store,
         distance: convertDistanceToKm(store.lat, clientPosition.lat, store.lng, clientPosition.lng),
+        distanceInDegrees: distance
       })
     });
 
@@ -47,7 +47,7 @@ const formaterDistance = (number: number) => {
 
 async function nearestStores(clientPosition: any) {
   const highestToLowest = comparePlaces(clientPosition).sort(
-    (a: any, b: any) => parseFloat(a.distance) - parseFloat(b.distance)
+    (a: any, b: any) => parseFloat(a.distanceInDegrees) - parseFloat(b.distanceInDegrees)
   );
   const nearestStores = highestToLowest.slice(0, numberOfStores);
   return await nearestStores;

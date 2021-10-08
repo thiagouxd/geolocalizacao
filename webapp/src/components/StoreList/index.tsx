@@ -79,9 +79,10 @@ const Select = styled.select`
 const Addresses = styled.div`
   display: flex;
   margin-top: 32px;
-  height: 538px;
+  height: auto;
   justify-content: center;
   ${biggerThanDesktop} {
+    height: 538px;
     max-width: 944px;
     margin: 32px auto 0 auto;
   }
