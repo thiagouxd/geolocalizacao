@@ -4,8 +4,6 @@ const numberOfStores: number = 3;
 
 const comparePlaces = (clientPosition: any) => {
   let storesPositionCompareWithClientPosition: any = [];
-
-  storesPositionCompareWithClientPosition = []
   clientPosition &&
     stores.forEach(store => {
       const diferenceLat = store.lat - clientPosition.lat;
@@ -23,6 +21,7 @@ const comparePlaces = (clientPosition: any) => {
 };
 
 const convertDistanceToKm = (storeLat: number, clientPositionLat: number, storeLng: number, clientPositionLng: number) => {
+  // Referência para converter graus em km https://www.movable-type.co.uk/scripts/latlong.html
   const earthRadius = 6371e3;
   const lat1 = storeLat * Math.PI / 180;
   const lat2 = clientPositionLat * Math.PI / 180;
