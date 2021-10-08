@@ -36,6 +36,7 @@ const Container = styled.div`
   box-sizing: border-box;
   overflow-y: auto;
   width: 100%;
+  max-width: 560px;
   ${biggerThanDesktop} {
     margin-right: 0;
     width: 80%;
