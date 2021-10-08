@@ -24,8 +24,14 @@ const CustomButton = styled.button`
   font-size: 16px;
   height: 48px;
   cursor: pointer;
+  box-shadow: 0 0 0 0 rgba(0,0,0,0.2);
+  transition: .4s box-shadow ease-in-out;
   &:hover,&:focus {
     background-color: var(--color-neutral-700);
+    box-shadow: 0 0 0 4px rgba(0,0,0,0.2);
+  }
+  &:active {
+    transform: translate(0, -1px);
   }
 `
 

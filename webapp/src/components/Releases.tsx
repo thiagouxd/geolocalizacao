@@ -80,6 +80,10 @@ const Button = styled.button`
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  cursor: pointer;
+  &:focus,&:hover {
+    background-color: var(--color-neutral-200);
+  }
 `
 
 export default Releases

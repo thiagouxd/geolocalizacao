@@ -40,6 +40,9 @@ const Item = styled.li`
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
+    &:hover, &:focus {
+      color: var(--color-neutral-600)
+    }
   }
 `
 

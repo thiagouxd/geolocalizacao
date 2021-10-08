@@ -73,6 +73,9 @@ const MenuItem = styled.li`
     color: var(--color-neutral-500);
     text-decoration: none;
     font-size: 12px;
+    &:hover, &:focus {
+      color: var(--color-neutral-700);
+    }
   }
   &:last-child {
     &::after {
