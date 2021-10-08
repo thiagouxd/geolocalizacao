@@ -19,12 +19,19 @@ const Modal = ({ showModal, setShowModal, children }: Props) => {
     }
   }, [setShowModal]);
 
+
+  const blockScrollBody = (modalOpen: boolean) => {
+    modalOpen ? document.body.style.overflowY = "hidden" :
+      document.body.style.overflowY = "auto"
+  }
+
   useEffect(() => {
     document.addEventListener("keydown", escFunction, false);
+    blockScrollBody(showModal)
     return () => {
       document.removeEventListener("keydown", escFunction, false);
     };
-  }, [escFunction]);
+  }, [escFunction, showModal]);
 
   return (<>
     <Overlay className={`${showModal && "show"}`}>
