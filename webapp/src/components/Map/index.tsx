@@ -21,7 +21,7 @@ function Map(props: any) {
   return isLoaded && stores ? (
     <GoogleMap
       mapContainerStyle={containerStyle}
-      zoom={14}
+      zoom={12}
       center={center}
     >
       {stores.map((store: any, index: number) => {

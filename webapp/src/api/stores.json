@@ -47,20 +47,8 @@
     "city": "Osasco",
     "state": "SP",
     "postalCode": "06020-010",
-    "lat": -20.4368823,
-    "lng": -54.587293
-  },
-  {
-    "street": "R. Oscar Freire",
-    "number": "969",
-    "district": "Cerqueira Cesar",
-    "openingHours": "Segunda a Sábado 10h às 22h | Domingo 11h às 20h",
-    "availability": "Disponível em 4 dias úteis",
-    "city": "São Paulo",
-    "state": "SP",
-    "postalCode": "01426-001",
-    "lat": -23.562813,
-    "lng": -46.6697195
+    "lat": -23.5415154,
+    "lng": -46.7669694
   },
   {
     "street": "Rua Coronel Xavier de Toledo",
@@ -71,8 +59,8 @@
     "city": "São Paulo",
     "state": "SP",
     "postalCode": "01048-100",
-    "lat": -20.4844849,
-    "lng": -54.6328638
+    "lat": -23.5474407,
+    "lng": -46.6398128
   },
   {
     "street": "Av. Higienópolis",
@@ -119,8 +107,8 @@
     "city": "Itaquaquecetuba",
     "state": "SP",
     "postalCode": "08590-315",
-    "lat": -20.4755323,
-    "lng": -54.6054596
+    "lat": -23.4395327,
+    "lng": -46.2781808
   },
   {
     "street": "Rodovia Castelo Branco KM 60",
@@ -130,9 +118,8 @@
     "availability": "Disponível em 4 dias úteis",
     "city": "São Roque",
     "state": "SP",
-    "postalCode": "18132-000",
-    "lat": -20.4284065,
-    "lng": -54.59931109999999
+    "lat": -23.5226973,
+    "lng": -47.1400198
   },
   {
     "street": "Avenida Andrômeda",

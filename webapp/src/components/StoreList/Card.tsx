@@ -62,6 +62,7 @@ const Title = styled.h3`
   font-size: 24px;
   margin: 0;
   font-weight: var(--font-weight-semibold);
+  white-space: pre-wrap;
 `
 
 const Infos = styled.div`
@@ -110,6 +111,8 @@ const Distance = styled.p`
   font-weight: var(--font-weight-semibold);
   margin: 0;
   margin-bottom: 4px;
+  white-space: nowrap;
+  margin-left: 16px;
 `
 
 const OpenMapButton = styled.button`
@@ -132,7 +135,7 @@ const PrimaryContainer = styled.div`
   margin-bottom: 16px;
   justify-content: space-between;
   align-items: flex-end;
-  flex-wrap: wrap;
+  flex-wrap: no-wap;
 `
 
 export default Card
