@@ -50,7 +50,6 @@ async function nearestStores(clientPosition: any) {
     (a: any, b: any) => parseFloat(a.distanceInDegrees) - parseFloat(b.distanceInDegrees)
   );
   const nearestStores = highestToLowest.slice(0, numberOfStores);
-  console.log(nearestStores)
   return await nearestStores;
 }
 
