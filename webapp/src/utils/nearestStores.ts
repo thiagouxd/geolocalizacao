@@ -1,5 +1,4 @@
 import stores from "../api/stores.json"
-var numeral = require('numeral')
 
 const numberOfStores: number = 3;
 
@@ -10,7 +9,6 @@ const comparePlaces = (clientPosition: any) => {
   clientPosition &&
     stores.forEach(store => {
       // Hipotenusa
-      // console.log(store)
       // const diferenceLat = store.lat - clientPosition.lat;
       // const diferenceLng = store.lng - clientPosition.lng;
       // const distance = Math.hypot(diferenceLat, diferenceLng);

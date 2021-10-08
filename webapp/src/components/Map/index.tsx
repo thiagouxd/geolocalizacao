@@ -1,5 +1,5 @@
 import pinMap from "../../images/icon_pin_mapa.svg"
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
 
 const containerStyle = {

@@ -16,7 +16,6 @@ const Modal = ({ showModal, setShowModal, children }: Props) => {
     <Overlay className={`${showModal && "show"}`}>
       <Content>
         <Header>
-          <h2></h2>
           <CloseButton onClick={handleCloseModal}>
             <CloseIcon />
           </CloseButton>
@@ -73,7 +72,7 @@ const Header = styled.div`
   position: absolute;
   top: 0;
   z-index: 1;
-  justify-content: space-between;
+  justify-content: flex-end;
   width: 100%;
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
 `
