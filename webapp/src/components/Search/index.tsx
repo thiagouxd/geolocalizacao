@@ -18,7 +18,6 @@ const Search = () => {
   const handleDefineStores = (event: { preventDefault: () => void }) => {
     event.preventDefault()
 
-
     getClientPosition(inputAddress).then(res => {
       nearestStores(res).then((res: any) => {
         res.length ? setStores(res) : alert("Não houve resultado para sua busca")

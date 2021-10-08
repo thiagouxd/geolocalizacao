@@ -23,7 +23,6 @@ interface Props {
   setCenterMap: any
 }
 
-
 const Card = ({ infos, setShowMapModal, setCenterMap }: Props) => {
   const handleShowMap = () => {
     setShowMapModal(true);
@@ -32,7 +31,7 @@ const Card = ({ infos, setShowMapModal, setCenterMap }: Props) => {
 
   return (
     <CustomCard>
-      <Header>
+      <header>
         <PrimaryContainer>
           <Title>{infos.street}</Title>
           <Distance>{infos.distance}</Distance>
@@ -40,7 +39,7 @@ const Card = ({ infos, setShowMapModal, setCenterMap }: Props) => {
         <OpenMapButton onClick={handleShowMap}>
           <PinIcon /> <span>Ver no mapa</span>
         </OpenMapButton>
-      </Header>
+      </header>
 
       <Infos>
         <AddressInfo>
@@ -101,9 +100,6 @@ const CustomCard = styled.li`
   &:last-child {
     margin-bottom: 0;
   }
-`
-
-const Header = styled.header`
 `
 
 const Distance = styled.p`

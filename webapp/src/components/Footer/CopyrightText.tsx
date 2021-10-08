@@ -31,7 +31,6 @@ const CopyrightText = () => {
   )
 }
 
-
 const Text = styled.p`
   color: var(--color-neutral-300);
   text-align: center;
@@ -60,7 +59,5 @@ const Container = styled.div`
     margin: 0 auto;
   }
 `
-
-
 
 export default CopyrightText
