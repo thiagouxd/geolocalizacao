@@ -6,7 +6,7 @@ const Search = () => {
   return (
     <InputContainer>
       <SearchIcon />
-      <Input data-testid="search" type="search" placeholder="Buscar" />
+      <Input type="search" placeholder="Buscar" />
     </InputContainer>
   )
 }
