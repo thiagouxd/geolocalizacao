@@ -1,85 +1,39 @@
-import { useEffect, useState } from 'react';
-import React from 'react'
-import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
 import pinMap from "../../images/icon_pin_mapa.svg"
-import { biggerThanDesktop } from '../../utils/mediaQueries';
-import styled from 'styled-components';
-import Modal from './Modal';
-
-const key = "AIzaSyC5t7cK8VjiacG1DxOkl0TO-tWcMbKu9hA"
+import React from 'react'
+import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
 
 const containerStyle = {
   width: '100%',
-  height: '100%'
+  height: '100%',
+  display: 'flex',
 };
 
-type Props = {
-  stores: any, showModal: boolean, setShowModal: any
-}
+const key = "AIzaSyC5t7cK8VjiacG1DxOkl0TO-tWcMbKu9hA"
 
-function Map({ stores, showModal, setShowModal }: Props) {
-  const [centerPosition, setCenterPosition] = useState<any>()
+function Map(props: any) {
+  const { stores, center = { lat: stores[0].lat, lng: stores[0].lng } } = props
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: key
   })
 
-  const [, setMap] = React.useState(null)
-
-  const onLoad = React.useCallback(function callback(map) {
-    const bounds = new window.google.maps.LatLngBounds();
-    map.fitBounds(bounds);
-    setMap(map)
-  }, [])
-
-  const onUnmount = React.useCallback(function callback(map) {
-    setMap(null)
-  }, [])
-
-
-  useEffect(() => {
-    setCenterPosition({ lat: stores[0].lat, lng: stores[0].lng })
-  }, [stores])
-
-  return isLoaded ? (
-    <>
-      <Modal showModal={showModal} setShowModal={setShowModal} />
-      <MapContainer>
-        {centerPosition && <GoogleMap
-          mapContainerStyle={containerStyle}
-          center={centerPosition && centerPosition}
-          zoom={10}
-          onLoad={onLoad}
-          onUnmount={onUnmount}
-        >
-          {stores.map((store: any, index: number) => {
-            return (
-              <Marker
-                key={index}
-                position={{
-                  lat: store.lat,
-                  lng: store.lng
-                }}
-                icon={pinMap} />
-            )
-          })}
-          <></>
-        </GoogleMap>
-        }
-      </MapContainer>
-    </>
+  return isLoaded && stores ? (
+    <GoogleMap
+      mapContainerStyle={containerStyle}
+      zoom={12}
+      center={center}
+    >
+      {stores.map((store: any, index: number) => {
+        return (
+          <Marker
+            key={index}
+            position={new window.google.maps.LatLng(store.lat, store.lng)}
+            icon={pinMap} />
+        )
+      })}
+    </GoogleMap>
   ) : <></>
 }
 
 export default React.memo(Map)
-
-const MapContainer = styled.div`
-  display: none;
-  height: 100%;
-  width: 100%;
-  margin-left: 24px;
-  ${biggerThanDesktop} {
-    display: flex;
-  }
-`

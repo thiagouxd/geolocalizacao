@@ -42,6 +42,7 @@ const Container = styled.header`
   box-sizing: border-box;
   justify-content: space-between;
   ${biggerThanDesktop} {
+    top: 56px;
     padding: 0 40px;
     justify-content: space-between;
   }

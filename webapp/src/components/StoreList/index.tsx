@@ -2,24 +2,24 @@ import styled from "styled-components"
 import { biggerThanDesktop } from "../../utils/mediaQueries"
 import Address from "./Address"
 import Map from "../Map"
-import { useState } from "react"
 
 const StoreList = (props: any) => {
   const { stores } = props
-  const [showMapModal, setShowMapModal] = useState<boolean>(false)
 
   return (
     <Addresses>
       <Container>
         <Select>
-          <option>Menor distancia</option>
+          <option>Menor distância</option>
           <option>Aberto 24h</option>
         </Select>
 
-        <Address setShowMapModal={setShowMapModal} addresses={stores} />
+        <Address stores={stores} />
       </Container>
 
-      <Map showModal={showMapModal} setShowModal={setShowMapModal} stores={stores} />
+      <MapContainer>
+        <Map stores={stores} />
+      </MapContainer>
     </Addresses>
   )
 }
@@ -35,8 +35,20 @@ const Container = styled.div`
   background-color: var(--color-neutral-200);
   box-sizing: border-box;
   overflow-y: auto;
+  width: 100%;
+  max-width: 560px;
   ${biggerThanDesktop} {
+    margin-right: 0;
     width: 80%;
+  }
+  `
+
+const MapContainer = styled.div`
+  display: none;
+  width: 100%;
+  margin-left: 24px;
+  ${biggerThanDesktop} {
+    display: flex;
   }
 `
 
@@ -67,8 +79,10 @@ const Select = styled.select`
 const Addresses = styled.div`
   display: flex;
   margin-top: 32px;
-  height: 538px;
+  height: auto;
+  justify-content: center;
   ${biggerThanDesktop} {
+    height: 538px;
     max-width: 944px;
     margin: 32px auto 0 auto;
   }

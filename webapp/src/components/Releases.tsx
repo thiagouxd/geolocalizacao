@@ -34,6 +34,7 @@ const Container = styled.div`
   background-color: var(--color-neutral-200);
   z-index: 1;
   ${biggerThanDesktop} {
+    top: 122px;
     padding: 8px 40px;
   }
 `
@@ -79,6 +80,10 @@ const Button = styled.button`
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  cursor: pointer;
+  &:focus,&:hover {
+    background-color: var(--color-neutral-200);
+  }
 `
 
 export default Releases
