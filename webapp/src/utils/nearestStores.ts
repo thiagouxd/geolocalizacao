@@ -35,9 +35,9 @@ const convertDistanceToKm = (storeLat: number, clientPositionLat: number, storeL
 
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 
-  const d = earthRadius * c;
+  const distance = earthRadius * c;
 
-  return formaterDistance(d);
+  return formaterDistance(distance);
 }
 
 const formaterDistance = (number: number) => {
