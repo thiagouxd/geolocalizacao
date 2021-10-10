@@ -9,7 +9,7 @@ import Search from "./Search"
 const Header = () => {
   return (
     <Container>
-      <Logo />
+      <Logo aria-label="Logotipo da Nike" />
 
       <PrimaryContainer>
         <Filters />
@@ -17,12 +17,12 @@ const Header = () => {
 
       <SecondaryContainer>
         <Search />
-        <HeaderButton>
-          <BagIcon />
+        <HeaderButton aria-label="Ir para Sacola de compras">
+          <BagIcon aria-hidden="true" />
         </HeaderButton>
 
-        <HeaderButton className="hamburger-button">
-          <MenuHamburgerIcon />
+        <HeaderButton aria-label="Abrir menu de opções" className="hamburger-button">
+          <MenuHamburgerIcon title="Menu hamburger icon" aria-hidden="true" />
         </HeaderButton>
 
       </SecondaryContainer>
