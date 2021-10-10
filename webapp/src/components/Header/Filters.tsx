@@ -3,7 +3,7 @@ import styled from "styled-components"
 const Filters = () => {
   return (
     <nav>
-      <List>
+      <List aria-labelledby="filter-items">
         <FilterList />
       </List>
     </nav>

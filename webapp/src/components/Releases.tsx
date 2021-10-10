@@ -8,7 +8,7 @@ const Releases = () => {
   return (
     <Container>
       <Content>
-        <Button>
+        <Button aria-label="Voltar uma notícia">
           <ChevronLeft />
         </Button>
         <InfoContainer>
@@ -17,7 +17,7 @@ const Releases = () => {
             Fique por dentro dos lançamentos <a href="https://nike.com">SNKRS</a>
           </Text>
         </InfoContainer>
-        <Button>
+        <Button aria-label="Mostrar próxima notícia">
           <ChevronRight />
         </Button>
       </Content>

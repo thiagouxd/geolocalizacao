@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { ReactComponent as SnksLogo } from "../../images/logo_snkrs.svg"
 import { ReactComponent as JordanLogo } from "../../images/logo_Jordan.svg"
-import { biggerThanDesktop } from "../../utils/mediaQueries"
+import { smallerThanDesktop } from "../../utils/mediaQueries"
 
 const UserMenu = () => {
   return (
@@ -11,10 +11,10 @@ const UserMenu = () => {
         <SnksLogo />
       </Logo>
 
-      <List>
+      <List aria-label="Lista de itens no menu">
         {menuList.map((item, index) => {
           return (
-            <MenuItem key={index}>
+            <MenuItem key={index} aria-label="Item do menu">
               <a href="https://nike.com.br">{item}</a>
             </MenuItem>
           )
@@ -27,7 +27,7 @@ const UserMenu = () => {
 export default UserMenu
 
 const Container = styled.nav`
-  display: none;
+  display: flex;
   z-index: 1;
   position: sticky;
   top: 0;
@@ -37,8 +37,8 @@ const Container = styled.nav`
   padding: 0 40px;
   height: 56px;
   background-color: var(--color-neutral-200);
-  ${biggerThanDesktop} {
-    display: flex;
+  ${smallerThanDesktop} {
+    display: none;
   }
 `
 
