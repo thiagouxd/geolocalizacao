@@ -1,12 +1,13 @@
-## Olá, meu visitante. 
-Este é o teste de geolocalização para o GrupoSBF. 
+## Olá, visitante.
 
-Para rodar o meu projeto eu fiz um pequeno serviço que me devolve o endereço que o usuário inputar. 
+Este é o teste de geolocalização para o GrupoSBF.
 
-Para isso, antes de rolar o frontend, vá na pasta webapi e rode:
-`npm i && npm start`
+Para rodar o projeto eu fiz um pequeno serviço que me devolve o endereço que o usuário inputar.
 
-Após isso, vá até a pasta webapp e rode o frontend:
-`npm i && npm start`
+Para isso, antes de subir o frontend, vá na pasta webapi e rode os comandos:
+`npm i` e `npm start`
 
-Caso já tenha feito o npm install uma vez, rode apenas o comando `npm start`. 
+Após a api estar em pé, vá até a pasta webapp e rode o comando:
+`npm i` e `npm start`
+
+Caso já tenha feito o npm install uma vez, rode apenas o comando `npm start`.
