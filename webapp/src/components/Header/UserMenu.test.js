@@ -11,7 +11,7 @@ describe("Navegação no menu do usuário", () => {
     expect(items.length).toBe(4)
   });
 
-  test("Deve conter um elemento de navegação", () => {
+  test("Deve conter um elemento de navegação envolvendo a lista", () => {
     render(<UserMenu />)
 
     const navigation = screen.getByRole("navigation")
