@@ -12,14 +12,14 @@ const SocialMedias = () => {
       </Title>
 
       <SocialMediasList>
-        <a href="https://facebook.com/nike" target="_blank" rel="noreferrer">
-          <Facebook />
+        <a aria-label="Abrir página do facebook" href="https://facebook.com/nike" target="_blank" rel="noreferrer">
+          <Facebook aria-hidden="true" />
         </a>
-        <a href="https://instagram.com/nike" target="_blank" rel="noreferrer">
-          <Instagram />
+        <a aria-label="Abrir página do instagram" href="https://instagram.com/nike" target="_blank" rel="noreferrer">
+          <Instagram aria-hidden="true" />
         </a>
-        <a href="https://yotube.com/nike" target="_blank" rel="noreferrer">
-          <Youtube />
+        <a aria-label="Abrir página do youtube" href="https://yotube.com/nike" target="_blank" rel="noreferrer">
+          <Youtube aria-hidden="true" />
         </a>
       </SocialMediasList>
     </div>
