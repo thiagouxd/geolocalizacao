@@ -33,7 +33,7 @@ const Search = () => {
           <SearchIcon />
           <Input type="search"
             placeholder="Busque por endereço ou CEP"
-            onChange={(event) => handleChange(event)} />
+            onChange={(event: ChangeEvent<HTMLInputElement>) => handleChange(event)} />
         </InputContainer>
         <Button onClick={handleDefineStores}>Buscar</Button>
       </Form>
