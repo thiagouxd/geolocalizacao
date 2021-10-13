@@ -4,14 +4,14 @@ import { smallerThanDesktop } from "../../utils/mediaQueries"
 
 const Search = () => {
   return (
-    <InputContainer>
+    <InputContainer role="search" aria-label="Buscar por algo">
       <SearchIcon />
-      <Input type="search" placeholder="Buscar" />
+      <Input role="search" type="search" placeholder="Buscar" />
     </InputContainer>
   )
 }
 
-const InputContainer = styled.div`
+const InputContainer = styled.form`
   display: flex;
   border-radius: 50px;
   width: 176px;
